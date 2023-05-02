@@ -205,8 +205,12 @@ namespace CodeBase.Services.Factory
             return Object.Instantiate(prefab).GetComponent<FXShotObject>();
         }
 
-        public QuestAudioPlayer CreateQuestAudioPlayer() =>
-            InstantiateRegister(AssetsPath.QuestAudioPlayer).GetComponent<QuestAudioPlayer>();
+        public QuestAudioPlayer CreateQuestAudioPlayer()
+        {
+            QuestAudioPlayer asd = InstantiateRegister(AssetsPath.QuestAudioPlayer).GetComponent<QuestAudioPlayer>();
+            asd.Construct(this);
+            return asd;
+        }
 
         public void CreateProps(PropsPieceData pieceData)
         {

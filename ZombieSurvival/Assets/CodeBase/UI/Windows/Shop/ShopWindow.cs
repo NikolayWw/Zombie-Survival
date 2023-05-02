@@ -28,6 +28,7 @@ namespace CodeBase.UI.Windows.Shop
         {
             _uiFactory = uiFactory;
             _dataService = dataService;
+
             _addMoney.Construct(adsService, persistentProgressService);
         }
 

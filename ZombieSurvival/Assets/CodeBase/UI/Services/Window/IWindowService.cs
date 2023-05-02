@@ -23,5 +23,7 @@ namespace CodeBase.UI.Services.Window
         void Initialize();
 
         void Clean();
+
+        bool IsWindowOpened(params WindowId[] ids);
     }
 }

@@ -1,3 +1,4 @@
+using CodeBase.Logic.Pause;
 using CodeBase.Services.Input;
 using CodeBase.Services.StaticData;
 using CodeBase.StaticData.Player;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace CodeBase.Player.Camera
 {
-    public class CameraLook : MonoBehaviour
+    public class CameraLook : MonoBehaviour, IFreeze
     {
         private IInputService _inputService;
 
@@ -23,6 +24,32 @@ namespace CodeBase.Player.Camera
         {
             UpdateLook();
         }
+
+        #region Pause
+
+        public void Pause() =>
+            Lock();
+
+        public void Play() =>
+            Unlock();
+
+        public void Freeze() =>
+            Lock();
+
+        public void Unfreeze() =>
+            Unlock();
+
+        private void Lock()
+        {
+            enabled = false;
+        }
+
+        private void Unlock()
+        {
+            enabled = true;
+        }
+
+        #endregion Pause
 
         private void UpdateLook()
         {

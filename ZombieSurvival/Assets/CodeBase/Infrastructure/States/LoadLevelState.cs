@@ -60,21 +60,17 @@ namespace CodeBase.Infrastructure.States
 
         private void OnLoaded()
         {
-            InitWorld();
+            string sceneKey = _persistentProgressService.PlayerProgress.WorldData.SceneKey;
+            Camera mainCamera = Camera.main;
+
+            InitServices(mainCamera, sceneKey);
+            InitWorld(sceneKey, mainCamera);
+
             _stateMachine.Enter<LoopState>();
         }
 
-        private void InitWorld()
+        private void InitWorld(string sceneKey, Camera mainCamera)
         {
-            string sceneKey = _persistentProgressService.PlayerProgress.WorldData.SceneKey;
-            _dataService.LoadLevelData(sceneKey);
-            Camera mainCamera = Camera.main;
-
-            _uiFactory.Initialize(mainCamera);
-            _windowService.Initialize();
-            _gameFactory.Initialize(mainCamera);
-            InitLogicFactory();
-
             _uiFactory.CreateUIRoot();
             _uiFactory.CreateHUD(_windowService);
 
@@ -82,8 +78,18 @@ namespace CodeBase.Infrastructure.States
             InitCamera(mainCamera.gameObject, _gameFactory.Player.transform);
             _uiFactory.CreateMinimap(_gameFactory.Player.transform);
             InitObjectsPiece(_dataService.ForLevel(sceneKey));
-            InformLoadProgress();
             InitQuestPointer();
+
+            InformLoadProgress();
+        }
+
+        private void InitServices(Camera mainCamera, string sceneKey)
+        {
+            _dataService.LoadLevelData(sceneKey);
+            _uiFactory.Initialize(mainCamera);
+            _windowService.Initialize();
+            _gameFactory.Initialize(mainCamera);
+            InitLogicFactory();
         }
 
         private void InitQuestPointer()
@@ -95,7 +101,11 @@ namespace CodeBase.Infrastructure.States
         private void InitCamera(GameObject mainCamera, Transform player)
         {
             mainCamera.GetComponent<CameraFollow>()?.Construct(player);
-            mainCamera.GetComponent<CameraLook>()?.Construct(_inputService, _dataService);
+            if (mainCamera.TryGetComponent(out CameraLook cameraLook))
+            {
+                cameraLook.Construct(_inputService, _dataService);
+                _gameFactory.PlayerFreezes.Add(cameraLook);
+            }
         }
 
         private void InformLoadProgress()

@@ -1,4 +1,5 @@
 ﻿using CodeBase.Logic.Pause;
+using CodeBase.Services.Factory;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,12 @@ namespace CodeBase.Logic.Quest
         [SerializeField] private AudioSource _audioSource;
         public bool IsPlaying { get; private set; }
         private bool _isPause;
+        private IGameFactory _gameFactory;
+
+        public void Construct(IGameFactory gameFactory)
+        {
+            _gameFactory = gameFactory;
+        }
 
         #region Pause
 
@@ -33,6 +40,7 @@ namespace CodeBase.Logic.Quest
 
         public void Close()
         {
+            _gameFactory.Pauses.Remove(this);
             Destroy(gameObject);
         }
 

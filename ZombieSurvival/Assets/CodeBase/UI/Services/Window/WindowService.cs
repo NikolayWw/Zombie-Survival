@@ -21,6 +21,8 @@ namespace CodeBase.UI.Services.Window
         public void Clean()
         {
             _uiFactory.OnWindowClose -= RemoveInContainer;
+            OnOpen = null;
+            OnClose = null;
         }
 
         public void Initialize()
@@ -91,6 +93,15 @@ namespace CodeBase.UI.Services.Window
         {
             window = _uiFactory.WindowsContainer.TryGetValue(id, out var valueWindow) ? (TWindow)valueWindow : null;
             return window;
+        }
+
+        public bool IsWindowOpened(params WindowId[] ids)
+        {
+            foreach (WindowId id in ids)
+                if (_uiFactory.WindowsContainer.ContainsKey(id))
+                    return true;
+
+            return false;
         }
 
         private void RemoveInContainer(WindowId id) =>

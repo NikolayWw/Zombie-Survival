@@ -14,7 +14,7 @@ namespace CodeBase.Player.Move.States
         private readonly ConstantForce _constantForce;
         private readonly Collider[] _groundColliders = new Collider[5];
 
-        private bool isPause;
+        private bool _isPause;
 
         public GroundMoveState(IInputService inputService, Rigidbody rigidbody, GroundMoveConfig config, Transform mainTransform, SpinningBehindCamera spinningBehindCamera, ConstantForce constantForce)
         {
@@ -28,9 +28,6 @@ namespace CodeBase.Player.Move.States
 
         public void FixedUpdate()
         {
-            if (isPause)
-                return;
-
             UpdateMove();
         }
 
@@ -62,20 +59,20 @@ namespace CodeBase.Player.Move.States
 
         public void Freeze()
         {
-            isPause = true;
+            _isPause = true;
             _rigidbody.velocity = Vector3.up * _rigidbody.velocity.y;
         }
 
         public void Unfreeze()
         {
-            isPause = false;
+            _isPause = false;
         }
 
         #endregion Pause
 
         private void UpdateMove()
         {
-            var moveAxis = _inputService.MoveAxis * _config.Speed;
+            var moveAxis = (_isPause == false) ? _inputService.MoveAxis * _config.Speed : Vector2.zero;
             var moveDirection = _spinningBehindCamera.transform.forward * moveAxis.y + _spinningBehindCamera.transform.right * moveAxis.x;
             _rigidbody.velocity = new Vector3(moveDirection.x, _rigidbody.velocity.y, moveDirection.z);
         }
