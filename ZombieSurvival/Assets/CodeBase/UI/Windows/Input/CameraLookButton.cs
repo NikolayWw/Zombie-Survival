@@ -1,6 +1,5 @@
 ﻿using CodeBase.Services.Input;
 using System.Collections;
-using CodeBase.Services.StaticData;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,7 +7,7 @@ namespace CodeBase.UI.Windows.Input
 {
     public class CameraLookButton : MonoBehaviour, IDragHandler
     {
-        private bool _enable;
+        private bool _dragging;
         private IInputService _inputService;
 
         public void Construct(IInputService inputService)
@@ -18,10 +17,10 @@ namespace CodeBase.UI.Windows.Input
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (_enable)
+            if (_dragging)
                 return;
 
-            _enable = true;
+            _dragging = true;
             StartCoroutine(UpdateTouch(eventData));
         }
 
@@ -33,7 +32,7 @@ namespace CodeBase.UI.Windows.Input
                 yield return null;
             }
             _inputService.UpdateCameraAxis(Vector2.zero);
-            _enable = false;
+            _dragging = false;
         }
     }
 }
