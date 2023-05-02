@@ -178,18 +178,7 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                     ""id"": ""6764a4da-af7e-4084-832b-58fe41ca1b23"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=0.1,y=0.1)"",
-                    ""groups"": """",
-                    ""action"": ""Mouse"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""388141f0-f29c-4e7d-9a3e-0cd5cc030efa"",
-                    ""path"": ""<Touchscreen>/delta"",
-                    ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=0.1,y=0.1)"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Mouse"",
                     ""isComposite"": false,
@@ -224,7 +213,7 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""56f223d9-60f2-4800-a7f4-bcd84f6970f7"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

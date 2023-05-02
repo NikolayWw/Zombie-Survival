@@ -8,6 +8,7 @@ namespace CodeBase.StaticData.Player
     public class PlayerConfig : ScriptableObject
     {
         [field: SerializeField] public MoveStaticData MoveStaticData { get; private set; }
+        [field: SerializeField] public CameraConfig CameraConfig { get; private set; }
         [field: SerializeField] public float MaxHealth { get; private set; } = 100f;
         [field: SerializeField] public int Money { get; private set; } = 10_000;
         [field: SerializeField] public int AidKitAmount { get; private set; } = 5;
@@ -19,6 +20,7 @@ namespace CodeBase.StaticData.Player
         private void OnValidate()
         {
             MoveStaticData.SwitchMoveConfig.OnValidate();
+            CameraConfig.OnValidate();
         }
     }
 }

@@ -34,7 +34,7 @@ namespace CodeBase.Services.SaveLoad
                     return;
                 }
 
-            foreach (ISaveLoad saveLoad in _gameFactory.SaveLoads) 
+            foreach (ISaveLoad saveLoad in _gameFactory.SaveLoads)
                 saveLoad.Save();
 
             var json = JsonUtility.ToJson(_persistentProgressService.PlayerProgress);

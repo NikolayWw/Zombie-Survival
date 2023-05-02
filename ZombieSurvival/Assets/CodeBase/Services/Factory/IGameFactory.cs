@@ -22,40 +22,24 @@ namespace CodeBase.Services.Factory
     public interface IGameFactory : IService
     {
         void CreatePlayer(Vector3 at, IWindowService windowService);
-
-        void CreateCMVcam(Transform target);
-
         void Initialize(Camera mainCamera);
-
         void CreateWeaponPiece(WeaponPieceData pieceData, IUIFactory uiFactory);
-
         GameObject Player { get; }
         List<IFreeze> PlayerFreezes { get; }
         List<ISaveLoad> SaveLoads { get; }
         List<Collider> PlayerColliders { get; }
         List<WorldMinimapIcon> MinimapIcons { get; }
         List<IPause> Pauses { get; }
-
         void Clean();
-
         FXShotObject CreateFXShot(ShotEffectId id);
-
         QuestAudioPlayer CreateQuestAudioPlayer();
-
         GameObject CreateNpc(NpcPieceData pieceData, IUIFactory uiFactory, IWindowService windowService);
-
         GameObject CreateEnemy(EnemyPieceData pieceData);
-
         void CreateQuestItem(QuestItemPieceData pieceData, IUIFactory uiFactory);
-
         GravityGunAnchor CreateGravityGunAnchor();
-
         void CreateProps(PropsPieceData pieceData);
-
         void CreatePropsFX(PropsId propsId, Vector3 at);
-
         void CreateSaveZone(Vector3 at, Quaternion rotate, ISaveLoadService saveLoad);
-
         BaseWeaponAttackHandler CreateWeaponInHand(WeaponDataContainer weaponDataContainer, Transform parent, PlayerAnimator playerAnimator, PlayerAudioPlayer audioPlayer, PlayerAnchors playerAnchors, IWindowService windowService);
     }
 }

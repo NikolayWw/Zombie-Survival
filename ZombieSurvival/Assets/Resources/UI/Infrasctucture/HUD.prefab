@@ -1024,9 +1024,9 @@ GameObject:
   - component: {fileID: 6444275321231848428}
   - component: {fileID: 6382698297074267791}
   - component: {fileID: 7893306310028406346}
-  - component: {fileID: 9183330808093458841}
+  - component: {fileID: 778009055846891452}
   m_Layer: 5
-  m_Name: TouchScreenPlayerCamera
+  m_Name: CameraLookButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9183330808093458841
+--- !u!114 &778009055846891452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1167708314051062542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff33f36f618b334694d57bec9825184, type: 3}
+  m_Script: {fileID: 11500000, guid: 0741f1210efbff34fa10d8415d43b141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1408580535548118165

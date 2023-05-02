@@ -28,13 +28,13 @@ namespace CodeBase.UI.Windows.Shop
             RefreshAvailableAd();
         }
 
-        public void Clean() => 
+        public void Clean() =>
             _adsService.RewardedVideoReady -= RefreshAvailableAd;
 
-        private void OnShowAdClicked() => 
+        private void OnShowAdClicked() =>
             _adsService.ShowRewardedVideo(OnVideoFinished);
 
-        private void OnVideoFinished() => 
+        private void OnVideoFinished() =>
             _persistentProgressService.PlayerProgress.PlayerData.IncrementMoney(100);
 
         private void RefreshAvailableAd()

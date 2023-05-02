@@ -1,5 +1,4 @@
-﻿using Cinemachine;
-using CodeBase.BehaviourTree.Behaviour;
+﻿using CodeBase.BehaviourTree.Behaviour;
 using CodeBase.Data.Props;
 using CodeBase.Data.WorldData;
 using CodeBase.Enemy;
@@ -11,7 +10,6 @@ using CodeBase.Logic.Quest;
 using CodeBase.Npc;
 using CodeBase.Npc.Dialogs;
 using CodeBase.Player;
-using CodeBase.Player.Camera;
 using CodeBase.Player.Move;
 using CodeBase.Player.PlayerAnimation;
 using CodeBase.Props;
@@ -158,13 +156,6 @@ namespace CodeBase.Services.Factory
             RegisterPlayerColliders(instance);
 
             Player = instance;
-        }
-
-        public void CreateCMVcam(Transform target)
-        {
-            GameObject instance = _assetProvider.Instantiate(AssetsPath.CVcam);
-            instance.GetComponent<CinemachineVirtualCamera>().Follow = target;
-            instance.GetComponent<CustomCinemachineInputProvider>()?.Construct(_inputService);
         }
 
         public GameObject CreateEnemy(EnemyPieceData pieceData)

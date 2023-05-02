@@ -49,12 +49,14 @@ namespace CodeBase.Enemy
         public void Play()
         {
             _animator.speed = _pauseAnimatorSpeed;
+            enabled = true;
         }
 
         public void Pause()
         {
             _pauseAnimatorSpeed = _animator.speed;
             _animator.speed = 0;
+            enabled = false;
         }
 
         #endregion Pause

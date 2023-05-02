@@ -11,11 +11,11 @@ namespace CodeBase.Services.Input
         Action OnWeaponReload { get; set; }
         bool IsFirePressed { get; }
         Action OnUseAidKit { get; set; }
-        Action OnTouchScreenCameraDown { get; set; }
-        Action OnTouchScreenCameraUp { get; set; }
+        Vector2 CameraAxis { get; }
 
         void Clean();
 
-        void SetFire(bool value);
+        void UpdateFire(bool value);
+        void UpdateCameraAxis(Vector2 axis);
     }
 }

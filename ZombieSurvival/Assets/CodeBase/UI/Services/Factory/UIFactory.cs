@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.States;
 using CodeBase.Logic;
 using CodeBase.Logic.Pause;
+using CodeBase.Services.Ads;
 using CodeBase.Services.Factory;
 using CodeBase.Services.Input;
 using CodeBase.Services.LogicFactory;
@@ -30,7 +31,6 @@ using CodeBase.UI.Windows.Shop;
 using CodeBase.UI.Windows.Weapon;
 using System;
 using System.Collections.Generic;
-using CodeBase.Services.Ads;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -56,7 +56,7 @@ namespace CodeBase.UI.Services.Factory
         private Transform _uiRoot;
         private Camera _mainCamera;
 
-        public UIFactory(IAssetProvider assetProvider, IStaticDataService staticDataService, IPersistentProgressService persistentProgressService, ILogicFactory logicFactory, IGameFactory gameFactory, ISaveLoadService saveLoadService, IGameStateMachine gameStateMachine, IInputService inputService,IAdsService adsService)
+        public UIFactory(IAssetProvider assetProvider, IStaticDataService staticDataService, IPersistentProgressService persistentProgressService, ILogicFactory logicFactory, IGameFactory gameFactory, ISaveLoadService saveLoadService, IGameStateMachine gameStateMachine, IInputService inputService, IAdsService adsService)
         {
             _assetProvider = assetProvider;
             _staticDataService = staticDataService;
@@ -95,7 +95,7 @@ namespace CodeBase.UI.Services.Factory
             instantiate.GetComponentInChildren<AidKitWindowUpdate>()?.Construct(_persistentProgressService);
             instantiate.GetComponentInChildren<MinimapSetTextureRenderer>()?.Construct(_staticDataService.MinimapConfig.RenderTexture);
 
-            instantiate.GetComponentInChildren<PlayerCameraRotateButton>().Construct(_inputService);
+            instantiate.GetComponentInChildren<CameraLookButton>()?.Construct(_inputService);
             instantiate.GetComponentInChildren<FireButton>()?.Construct(_inputService);
             instantiate.GetComponentInChildren<JumpButton>()?.Construct(_inputService);
             instantiate.GetComponentInChildren<WeaponReloadButton>()?.Construct(_inputService);
@@ -152,7 +152,7 @@ namespace CodeBase.UI.Services.Factory
         public void CreateShop(IWindowService windowService)
         {
             ShopWindow shopWindow = InstantiateRegister<ShopWindow>(WindowId.ShopWindow);
-            shopWindow.Construct(this, _staticDataService,_persistentProgressService, _adsService);
+            shopWindow.Construct(this, _staticDataService, _persistentProgressService, _adsService);
             shopWindow.GetComponent<CloseWindowButton>()?.Construct(windowService);
             shopWindow.GetComponent<BuyButton>()?.Construct(_staticDataService, _logicFactory, _persistentProgressService);
             shopWindow.GetComponentInChildren<ShopItemDescription>()?.Construct(_staticDataService, _logicFactory, _persistentProgressService);

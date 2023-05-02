@@ -11,10 +11,13 @@ namespace CodeBase.UI.Windows.Input
         protected Action OnDown;
         protected Action OnUp;
 
-        public void Construct(IInputService inputService) => InputService = inputService;
+        public void Construct(IInputService inputService) =>
+            InputService = inputService;
 
-        public void OnPointerDown(PointerEventData eventData) => OnDown?.Invoke();
+        public void OnPointerDown(PointerEventData eventData) =>
+            OnDown?.Invoke();
 
-        public void OnPointerUp(PointerEventData eventData) => OnUp?.Invoke();
+        public void OnPointerUp(PointerEventData eventData) =>
+            OnUp?.Invoke();
     }
 }

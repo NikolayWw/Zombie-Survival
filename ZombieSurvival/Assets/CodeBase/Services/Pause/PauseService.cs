@@ -21,7 +21,7 @@ namespace CodeBase.Services.Pause
 
         public void Pause()
         {
-            foreach (var pause in _gameFactory.Pauses) 
+            foreach (var pause in _gameFactory.Pauses)
                 pause.Pause();
 
         }

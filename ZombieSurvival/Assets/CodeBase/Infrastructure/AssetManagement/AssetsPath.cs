@@ -3,7 +3,6 @@
     public static class AssetsPath
     {
         public const string Player = "Player/Player";
-        public const string CVcam = "Player/CM vcam1";
         public const string QuestAudioPlayer = "Quest/QuestAudioPlayer";
         public const string GravityGunConnectAnchor = "Items/Weapons/GravityObjectsAnchor";
         public const string SaveZone = "SaveZone/SaveArea";

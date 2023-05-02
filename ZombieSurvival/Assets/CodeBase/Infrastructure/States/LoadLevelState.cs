@@ -1,6 +1,6 @@
 using CodeBase.Data.WorldData;
 using CodeBase.Infrastructure.Logic;
-using CodeBase.Player;
+using CodeBase.Player.Camera;
 using CodeBase.Services.Factory;
 using CodeBase.Services.Input;
 using CodeBase.Services.LogicFactory;
@@ -68,16 +68,18 @@ namespace CodeBase.Infrastructure.States
         {
             string sceneKey = _persistentProgressService.PlayerProgress.WorldData.SceneKey;
             _dataService.LoadLevelData(sceneKey);
+            Camera mainCamera = Camera.main;
 
-            _uiFactory.Initialize(Camera.main);
+            _uiFactory.Initialize(mainCamera);
             _windowService.Initialize();
-            _gameFactory.Initialize(Camera.main);
+            _gameFactory.Initialize(mainCamera);
             InitLogicFactory();
 
             _uiFactory.CreateUIRoot();
             _uiFactory.CreateHUD(_windowService);
 
             InitPlayer();
+            InitCamera(mainCamera.gameObject, _gameFactory.Player.transform);
             _uiFactory.CreateMinimap(_gameFactory.Player.transform);
             InitObjectsPiece(_dataService.ForLevel(sceneKey));
             InformLoadProgress();
@@ -88,6 +90,12 @@ namespace CodeBase.Infrastructure.States
         {
             var id = _persistentProgressService.PlayerProgress.WorldData.QuestPointerPieceData.Id;
             _uiFactory.QuestPointerWindow.InitWorldPointer(id);
+        }
+
+        private void InitCamera(GameObject mainCamera, Transform player)
+        {
+            mainCamera.GetComponent<CameraFollow>()?.Construct(player);
+            mainCamera.GetComponent<CameraLook>()?.Construct(_inputService, _dataService);
         }
 
         private void InformLoadProgress()
@@ -107,7 +115,6 @@ namespace CodeBase.Infrastructure.States
         private void InitPlayer()
         {
             _gameFactory.CreatePlayer(_persistentProgressService.PlayerProgress.PlayerData.Position, _windowService);
-            _gameFactory.CreateCMVcam(_gameFactory.Player.GetComponent<PlayerAnchors>().CameraAnchor);
         }
 
         private void InitObjectsPiece(LevelConfig levelConfig)

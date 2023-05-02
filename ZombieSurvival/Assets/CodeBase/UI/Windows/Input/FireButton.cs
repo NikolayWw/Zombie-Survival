@@ -4,8 +4,8 @@
     {
         private void Start()
         {
-            OnUp += () => InputService.SetFire(false);
-            OnDown += () => InputService.SetFire(true);
+            OnUp += () => InputService.UpdateFire(false);
+            OnDown += () => InputService.UpdateFire(true);
         }
     }
 }
