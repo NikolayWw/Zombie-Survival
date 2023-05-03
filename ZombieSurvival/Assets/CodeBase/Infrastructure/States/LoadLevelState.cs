@@ -105,6 +105,7 @@ namespace CodeBase.Infrastructure.States
             {
                 cameraLook.Construct(_inputService, _dataService);
                 _gameFactory.PlayerFreezes.Add(cameraLook);
+                _gameFactory.Pauses.Add(cameraLook);
             }
         }
 

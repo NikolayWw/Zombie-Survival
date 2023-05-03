@@ -21,9 +21,7 @@ namespace CodeBase.Services.Pause
 
         public void Pause()
         {
-            foreach (var pause in _gameFactory.Pauses)
-                pause.Pause();
-
+            _gameFactory.Pauses.ForEach(x => x.Pause());
         }
 
         public void FreezePlayer()

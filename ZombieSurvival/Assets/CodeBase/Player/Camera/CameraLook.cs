@@ -6,13 +6,16 @@ using UnityEngine;
 
 namespace CodeBase.Player.Camera
 {
-    public class CameraLook : MonoBehaviour, IFreeze
+    public class CameraLook : MonoBehaviour, IFreeze, IPause
     {
         private IInputService _inputService;
 
         private float _xRotation;
         private float _yRotation;
         private CameraConfig _config;
+
+        private bool _isPause;
+        private bool _isFreeze;
 
         public void Construct(IInputService inputService, IStaticDataService dataService)
         {
@@ -27,17 +30,33 @@ namespace CodeBase.Player.Camera
 
         #region Pause
 
-        public void Pause() =>
+        public void Pause()
+        {
+            _isPause = true;
             Lock();
+        }
 
-        public void Play() =>
-            Unlock();
+        public void Play()
+        {
+            _isPause = false;
 
-        public void Freeze() =>
+            if (_isFreeze == false)
+                Unlock();
+        }
+
+        public void Freeze()
+        {
+            _isFreeze = true;
             Lock();
+        }
 
-        public void Unfreeze() =>
-            Unlock();
+        public void Unfreeze()
+        {
+            _isFreeze = false;
+
+            if (_isPause == false)
+                Unlock();
+        }
 
         private void Lock()
         {

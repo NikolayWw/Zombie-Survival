@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <LevelsStaticData>k__BackingField:
   - <SceneKey>k__BackingField: Main
-    <PlayerInitialPosition>k__BackingField: {x: -6.4870415, y: 2.723024, z: -29.245441}
+    <PlayerInitialPosition>k__BackingField: {x: -6.904, y: 3.957, z: -31.632}
     <QuestPointerInitialId>k__BackingField: 1
     <WeaponsSpawnStaticData>k__BackingField:
     - _inscpectorName: Melee_Machete
@@ -95,6 +95,10 @@ MonoBehaviour:
           <WeaponId>k__BackingField: 1999
       <Position>k__BackingField: {x: -8.03, y: 0, z: 0.06}
     <QuestItemsStaticData>k__BackingField:
+    - _inspectorName: Turnip
+      <Id>k__BackingField: 1
+      <Amount>k__BackingField: 1
+      <Position>k__BackingField: {x: 4.69, y: 0.4, z: -9}
     - _inspectorName: Turnip
       <Id>k__BackingField: 1
       <Amount>k__BackingField: 1

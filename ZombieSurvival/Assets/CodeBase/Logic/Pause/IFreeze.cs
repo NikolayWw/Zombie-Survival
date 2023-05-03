@@ -1,6 +1,6 @@
 ﻿namespace CodeBase.Logic.Pause
 {
-    public interface IFreeze : IPause
+    public interface IFreeze
     {
         void Freeze();
 

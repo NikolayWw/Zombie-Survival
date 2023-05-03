@@ -1,12 +1,14 @@
 ﻿using CodeBase.Services.Pause;
 using CodeBase.UI.Services.Window;
 using System.Linq;
+using UnityEngine;
 
 namespace CodeBase.Logic.Pause
 {
     public class SwitchPlayerState
     {
-        private readonly WindowId[] TriggeredWindows = { WindowId.ShopWindow, WindowId.GameMenuWindow };
+        private readonly WindowId[] PauseWindows = {  WindowId.GameMenuWindow };
+        private readonly WindowId[] FreezeWindows = { WindowId.ShopWindow };
 
         private readonly IPauseService _pauseService;
         private readonly IWindowService _windowService;
@@ -30,7 +32,7 @@ namespace CodeBase.Logic.Pause
             if (_isPause)
                 return;
 
-            if (TriggeredWindows.Contains(id))
+            if (PauseWindows.Contains(id))
             {
                 _pauseService.Pause();
                 _isPause = true;
@@ -42,7 +44,7 @@ namespace CodeBase.Logic.Pause
             if (_isPause == false)
                 return;
 
-            if (_windowService.IsWindowOpened(TriggeredWindows) == false)
+            if (_windowService.IsWindowOpened(PauseWindows) == false)
             {
                 _pauseService.Play();
                 _isPause = false;
@@ -54,7 +56,7 @@ namespace CodeBase.Logic.Pause
             if (_isPlayerFreeze)
                 return;
 
-            if (TriggeredWindows.Contains(id))
+            if (FreezeWindows.Contains(id))
             {
                 _pauseService.FreezePlayer();
                 _isPlayerFreeze = true;
@@ -66,7 +68,7 @@ namespace CodeBase.Logic.Pause
             if (_isPlayerFreeze == false)
                 return;
 
-            if (_windowService.IsWindowOpened(TriggeredWindows) == false)
+            if (_windowService.IsWindowOpened(FreezeWindows) == false)
             {
                 _pauseService.UnfreezePlayer();
                 _isPlayerFreeze = false;
