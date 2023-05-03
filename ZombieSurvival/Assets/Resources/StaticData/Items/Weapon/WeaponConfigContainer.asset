@@ -27,6 +27,7 @@ MonoBehaviour:
       type: 3}
     <HitPushForce>k__BackingField: 2
     <AttackDistance>k__BackingField: 2
+    <AttackDelay>k__BackingField: 0.2
     <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
       type: 3}
     <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: c072bb335519e044689d591c829340c4,
@@ -45,6 +46,7 @@ MonoBehaviour:
       type: 3}
     <HitPushForce>k__BackingField: 5
     <AttackDistance>k__BackingField: 2
+    <AttackDelay>k__BackingField: 0.2
     <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
       type: 3}
     <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: c072bb335519e044689d591c829340c4,
@@ -64,6 +66,7 @@ MonoBehaviour:
       type: 3}
     <HitPushForce>k__BackingField: 3
     <AttackDistance>k__BackingField: 350
+    <AttackDelay>k__BackingField: 0.2
     <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
       type: 3}
     <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: b33401bb7ddac31419ee56b7656891d3,
@@ -83,12 +86,6 @@ MonoBehaviour:
       type: 3}
     <ReloadAudio>k__BackingField: {fileID: 8300000, guid: 111c216adb1e811499d9277f3d81d5ed,
       type: 3}
-    <UseAiming>k__BackingField: 0
-    <AimingCrosshairConfig>k__BackingField:
-      <Width>k__BackingField: 10
-      <Lenght>k__BackingField: 56
-      <MinSize>k__BackingField: 40
-      <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   - <Name>k__BackingField: Pistol Small
     <WeaponId>k__BackingField: 1001
     <Price>k__BackingField: 150
@@ -100,6 +97,7 @@ MonoBehaviour:
       type: 3}
     <HitPushForce>k__BackingField: 3
     <AttackDistance>k__BackingField: 350
+    <AttackDelay>k__BackingField: 0.2
     <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
       type: 3}
     <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: b33401bb7ddac31419ee56b7656891d3,
@@ -119,12 +117,6 @@ MonoBehaviour:
       type: 3}
     <ReloadAudio>k__BackingField: {fileID: 8300000, guid: 111c216adb1e811499d9277f3d81d5ed,
       type: 3}
-    <UseAiming>k__BackingField: 0
-    <AimingCrosshairConfig>k__BackingField:
-      <Width>k__BackingField: 10
-      <Lenght>k__BackingField: 56
-      <MinSize>k__BackingField: 40
-      <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   - <Name>k__BackingField: M16
     <WeaponId>k__BackingField: 1000
     <Price>k__BackingField: 250
@@ -136,6 +128,7 @@ MonoBehaviour:
       type: 3}
     <HitPushForce>k__BackingField: 4
     <AttackDistance>k__BackingField: 500
+    <AttackDelay>k__BackingField: 0.2
     <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
       type: 3}
     <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: b33401bb7ddac31419ee56b7656891d3,
@@ -155,12 +148,6 @@ MonoBehaviour:
       type: 3}
     <ReloadAudio>k__BackingField: {fileID: 8300000, guid: 37bb3ecebb749d14b8fa1dfd05221f85,
       type: 3}
-    <UseAiming>k__BackingField: 1
-    <AimingCrosshairConfig>k__BackingField:
-      <Width>k__BackingField: 10
-      <Lenght>k__BackingField: 56
-      <MinSize>k__BackingField: 40
-      <Color>k__BackingField: {r: 0, g: 1, b: 0.14509805, a: 1}
   - <Name>k__BackingField: Bandi Gun
     <WeaponId>k__BackingField: 1002
     <Price>k__BackingField: 250
@@ -172,6 +159,7 @@ MonoBehaviour:
       type: 3}
     <HitPushForce>k__BackingField: 4
     <AttackDistance>k__BackingField: 500
+    <AttackDelay>k__BackingField: 0.2
     <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
       type: 3}
     <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: b33401bb7ddac31419ee56b7656891d3,
@@ -183,7 +171,7 @@ MonoBehaviour:
       <Color>k__BackingField: {r: 0.9056604, g: 0.44784957, b: 0, a: 0}
     <ShootType>k__BackingField: 2
     <MaxMagazine>k__BackingField: 99
-    <Damage>k__BackingField: 1
+    <Damage>k__BackingField: 65
     <BuyAmount>k__BackingField: 15
     <FireAudio>k__BackingField: {fileID: 8300000, guid: 21d78015ca062134a8fe1f2d79b6c7a8,
       type: 3}
@@ -191,12 +179,6 @@ MonoBehaviour:
       type: 3}
     <ReloadAudio>k__BackingField: {fileID: 8300000, guid: 37bb3ecebb749d14b8fa1dfd05221f85,
       type: 3}
-    <UseAiming>k__BackingField: 0
-    <AimingCrosshairConfig>k__BackingField:
-      <Width>k__BackingField: 10
-      <Lenght>k__BackingField: 56
-      <MinSize>k__BackingField: 40
-      <Color>k__BackingField: {r: 1, g: 0, b: 0, a: 1}
   <GravityGuns>k__BackingField:
   - <Name>k__BackingField: Gravity Gun
     <WeaponId>k__BackingField: 1999
@@ -209,6 +191,7 @@ MonoBehaviour:
       type: 3}
     <HitPushForce>k__BackingField: 5
     <AttackDistance>k__BackingField: 15
+    <AttackDelay>k__BackingField: 0.2
     <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
       type: 3}
     <ShotEffectSettings>k__BackingField: {fileID: 0}

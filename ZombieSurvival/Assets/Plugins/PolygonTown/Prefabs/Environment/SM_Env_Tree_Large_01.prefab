@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 33966422690651982}
   - component: {fileID: 23140099855325286}
   - component: {fileID: 7893983484092637363}
+  - component: {fileID: 3669820358738744682}
   m_Layer: 0
   m_Name: SM_Env_Tree_House_01
   m_TagString: Untagged
@@ -173,6 +174,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 6db1cae809cfa4d49aa557887c926282, type: 3}
+--- !u!114 &3669820358738744682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526718558247648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ae73bbea3273245a64fa22b11ea9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SurfaceId>k__BackingField: 2
 --- !u!1 &1633378948027076
 GameObject:
   m_ObjectHideFlags: 0
