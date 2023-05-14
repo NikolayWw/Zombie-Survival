@@ -55,15 +55,6 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Mouse"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""588565f2-1459-4988-8561-aee99287ab03"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""UseAidKit"",
                     ""type"": ""Button"",
                     ""id"": ""e03b849f-b7ab-4aab-b227-ec8355e122f5"",
@@ -71,6 +62,15 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseLook"",
+                    ""type"": ""Value"",
+                    ""id"": ""2f44ddbe-3988-4ff2-be60-d5b350ed92aa"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -132,7 +132,7 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d7b0e457-b6ee-4bbf-a23e-c4dbc88b7f80"",
-                    ""path"": ""<Joystick>/stick"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -153,8 +153,30 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""e0718ddc-c807-4b14-b33d-8f93723e9759"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""52187632-e94b-4cd1-97ac-7fe64e1b3398"",
                     ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dff0ee03-2378-4f1b-834b-b72110e5daae"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -175,12 +197,23 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6764a4da-af7e-4084-832b-58fe41ca1b23"",
+                    ""id"": ""dcae2c95-80e3-4319-a7d5-0fc8406bfb58"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseAidKit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07dd08f9-89fd-4f56-8aab-5a3e0f4332bb"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=1.4,y=1.4)"",
+                    ""processors"": ""ScaleVector2(x=0.1,y=0.1)"",
                     ""groups"": """",
-                    ""action"": ""Mouse"",
+                    ""action"": ""MouseLook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -223,8 +256,30 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""ccaeb853-4271-43d7-a604-5f74bd3adc75"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""16a2e006-a6e2-41e7-a164-d735a7822fb6"",
                     ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6d1ba56-20e4-43ef-840c-ab5ef1979620"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -242,8 +297,8 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_Mouse = m_Player.FindAction("Mouse", throwIfNotFound: true);
         m_Player_UseAidKit = m_Player.FindAction("UseAidKit", throwIfNotFound: true);
+        m_Player_MouseLook = m_Player.FindAction("MouseLook", throwIfNotFound: true);
         // Weapon
         m_Weapon = asset.FindActionMap("Weapon", throwIfNotFound: true);
         m_Weapon_Fire = m_Weapon.FindAction("Fire", throwIfNotFound: true);
@@ -310,8 +365,8 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_Mouse;
     private readonly InputAction m_Player_UseAidKit;
+    private readonly InputAction m_Player_MouseLook;
     public struct PlayerActions
     {
         private @MainControls m_Wrapper;
@@ -319,8 +374,8 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @Mouse => m_Wrapper.m_Player_Mouse;
         public InputAction @UseAidKit => m_Wrapper.m_Player_UseAidKit;
+        public InputAction @MouseLook => m_Wrapper.m_Player_MouseLook;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -339,12 +394,12 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @Mouse.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse;
-                @Mouse.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse;
-                @Mouse.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse;
                 @UseAidKit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseAidKit;
                 @UseAidKit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseAidKit;
                 @UseAidKit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseAidKit;
+                @MouseLook.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseLook;
+                @MouseLook.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseLook;
+                @MouseLook.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseLook;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -358,12 +413,12 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
-                @Mouse.started += instance.OnMouse;
-                @Mouse.performed += instance.OnMouse;
-                @Mouse.canceled += instance.OnMouse;
                 @UseAidKit.started += instance.OnUseAidKit;
                 @UseAidKit.performed += instance.OnUseAidKit;
                 @UseAidKit.canceled += instance.OnUseAidKit;
+                @MouseLook.started += instance.OnMouseLook;
+                @MouseLook.performed += instance.OnMouseLook;
+                @MouseLook.canceled += instance.OnMouseLook;
             }
         }
     }
@@ -414,8 +469,8 @@ public partial class @MainControls : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnMouse(InputAction.CallbackContext context);
         void OnUseAidKit(InputAction.CallbackContext context);
+        void OnMouseLook(InputAction.CallbackContext context);
     }
     public interface IWeaponActions
     {

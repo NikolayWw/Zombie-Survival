@@ -42,7 +42,7 @@ namespace CodeBase.BehaviourTree.Behaviour
                 }),
                 new Sequencer(new List<Node>
                 {
-                    new FindTarget_Task(transform, _config.WhatIsTargetLayer, _config.FindTargetRadius),
+                    new FindTarget_Task(transform, _config.WhatIsTargetLayer, _config.FindTargetRadius,_config.FindTargetDelay),
                     new FollowTarget_Task(_agent, _config.MoveToTargetSpeed, _enemyAnimator),
                 }),
                 new EnemyIdle_Task()

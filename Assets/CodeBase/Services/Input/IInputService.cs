@@ -15,7 +15,6 @@ namespace CodeBase.Services.Input
 
         void Clean();
 
-        void UpdateFire(bool value);
         void UpdateCameraAxis(Vector2 axis);
     }
 }

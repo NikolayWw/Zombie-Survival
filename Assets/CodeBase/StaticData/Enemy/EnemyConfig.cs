@@ -18,6 +18,7 @@ namespace CodeBase.StaticData.Enemy
 
         [field: SerializeField] public LayerMask WhatIsTargetLayer { get; private set; }
         [field: SerializeField] public float FindTargetRadius { get; private set; }
+        [field: SerializeField] public float FindTargetDelay { get; private set; } = 2f;
         [field: SerializeField] public float MoveToTargetSpeed { get; private set; }
         [field: SerializeField] public ApplyDamageSurfaceId ApplyDamageSurfaceId { get; private set; }
     }

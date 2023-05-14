@@ -12,6 +12,7 @@ using CodeBase.Services.SaveLoad;
 using CodeBase.Services.StaticData;
 using CodeBase.UI.Services.Factory;
 using CodeBase.UI.Services.Window;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.States
 {
@@ -45,8 +46,8 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<IGameStateMachine>(_stateMachine);
             RegisterStaticData();
             RegisterAds();
-
             _services.RegisterSingle<IInputService>(new InputService());
+
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
             _services.RegisterSingle<ILogicFactory>(new LogicFactory(_coroutineRunner));
             _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
@@ -75,6 +76,8 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<IPauseService>(new PauseService(_services.Single<IGameFactory>(), _services.Single<IUIFactory>()));
             _services.RegisterSingle<IWindowService>(new WindowService(_services.Single<IUIFactory>()));
         }
+
+     
 
         private void OnLoaded()
         {

@@ -421,7 +421,6 @@ GameObject:
   - component: {fileID: 1468395371}
   - component: {fileID: 1468395370}
   - component: {fileID: 197605099202744606}
-  - component: {fileID: 6220110336464322336}
   m_Layer: 5
   m_Name: AidKitWindow
   m_TagString: Untagged
@@ -501,18 +500,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firstAidKitText: {fileID: 222033526}
---- !u!114 &6220110336464322336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468395368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f44498e85cdc60849868fb89cc8a943b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1683477230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,7 +1098,7 @@ GameObject:
   - component: {fileID: 7643288024629906453}
   - component: {fileID: 1813193179870509707}
   - component: {fileID: 6517617745174717745}
-  - component: {fileID: 7285046849340490312}
+  - component: {fileID: 8759970226671413205}
   m_Layer: 5
   m_Name: Jump
   m_TagString: Untagged
@@ -1175,7 +1162,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7285046849340490312
+--- !u!114 &8759970226671413205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1184,9 +1171,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1408580535548118165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84c1b5ec673fd3144ad78c65e873bc6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/buttonNorth
 --- !u!1 &1873759858163802880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,7 +2061,7 @@ GameObject:
   - component: {fileID: 5261765921419063184}
   - component: {fileID: 7320838807038551262}
   - component: {fileID: 7128156241873773431}
-  - component: {fileID: 9198005099182567513}
+  - component: {fileID: 5725301365427126867}
   m_Layer: 5
   m_Name: Fire
   m_TagString: Untagged
@@ -2137,7 +2125,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9198005099182567513
+--- !u!114 &5725301365427126867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2146,9 +2134,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5904544728714129361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e46726d99f5ca144baba8916c962ec13, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/buttonEast
 --- !u!1 &6112754996958768087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,7 +2149,7 @@ GameObject:
   - component: {fileID: 4723109803067378509}
   - component: {fileID: 913030352836511765}
   - component: {fileID: 2789536995365732326}
-  - component: {fileID: 8182317233432574184}
+  - component: {fileID: 3349704692425920621}
   m_Layer: 5
   m_Name: WeaponReload
   m_TagString: Untagged
@@ -2224,7 +2213,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8182317233432574184
+--- !u!114 &3349704692425920621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2233,9 +2222,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6112754996958768087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15f648095c4fb6e41abc8b28d0eb5f34, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/buttonSouth
 --- !u!1 &7617454337581739372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2237,7 @@ GameObject:
   - component: {fileID: 4364311281845203451}
   - component: {fileID: 532564495943936795}
   - component: {fileID: 6175099425700805713}
-  - component: {fileID: 5637061188798039655}
+  - component: {fileID: 7111462562956951497}
   m_Layer: 5
   m_Name: Interaction
   m_TagString: Untagged
@@ -2311,7 +2301,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5637061188798039655
+--- !u!114 &7111462562956951497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2320,9 +2310,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7617454337581739372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af16f0feb3523f54491ff58f3437c2d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/buttonWest
 --- !u!1 &8129846839446181366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,7 +2327,7 @@ GameObject:
   - component: {fileID: 5122963997373876464}
   - component: {fileID: 6355187632017717831}
   m_Layer: 5
-  m_Name: Joystic
+  m_Name: Move
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2411,7 +2402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MovementRange: 50
-  m_ControlPath: <Joystick>/stick
+  m_ControlPath: <Gamepad>/leftStick
 --- !u!1 &8289514863133684030
 GameObject:
   m_ObjectHideFlags: 0

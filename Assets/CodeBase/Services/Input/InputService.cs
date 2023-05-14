@@ -7,17 +7,16 @@ namespace CodeBase.Services.Input
     {
         public Vector2 MoveAxis => _mainControls.Player.Move.ReadValue<Vector2>();
 
-        public Vector2 CameraAxis => Application.isEditor == false ? _cameraAxis : _mainControls.Player.Mouse.ReadValue<Vector2>();
+        public Vector2 CameraAxis => Application.isEditor ? _mainControls.Player.MouseLook.ReadValue<Vector2>() : _cameraAxis;
         public Action OnJump { get; set; }
 
         public Action OnInteract { get; set; }
         public Action OnUseAidKit { get; set; }
 
-        public bool IsFirePressed => _firePress || _mainControls.Weapon.Fire.IsPressed();
+        public bool IsFirePressed => _mainControls.Weapon.Fire.IsPressed();
         public Action OnWeaponReload { get; set; }
 
         private readonly MainControls _mainControls;
-        private bool _firePress;
         private Vector2 _cameraAxis;
 
         public InputService()
@@ -40,9 +39,6 @@ namespace CodeBase.Services.Input
             OnUseAidKit = null;
             OnWeaponReload = null;
         }
-
-        public void UpdateFire(bool value) =>
-            _firePress = value;
 
         public void UpdateCameraAxis(Vector2 axis) =>
             _cameraAxis = axis;

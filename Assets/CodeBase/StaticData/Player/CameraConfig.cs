@@ -8,11 +8,5 @@ namespace CodeBase.StaticData.Player
     {
         [field: SerializeField] public float XClampUp { get; private set; } = 90f;
         [field: SerializeField] public float XClampDown { get; private set; } = -90f;
-        [field: SerializeField] public float Slowdown { get; private set; } = 0.1f;
-
-        public void OnValidate()
-        {
-            Slowdown = Mathf.Clamp01(Slowdown);
-        }
     }
 }

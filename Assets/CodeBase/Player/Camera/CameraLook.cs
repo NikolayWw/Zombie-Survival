@@ -75,8 +75,8 @@ namespace CodeBase.Player.Camera
             if (_inputService == null)
                 return;
 
-            _xRotation -= _inputService.CameraAxis.y * _config.Slowdown;
-            _yRotation += _inputService.CameraAxis.x * _config.Slowdown;
+            _xRotation -= _inputService.CameraAxis.y;
+            _yRotation += _inputService.CameraAxis.x;
 
             _xRotation = Mathf.Clamp(_xRotation, _config.XClampDown, _config.XClampUp);
             transform.localRotation = Quaternion.Euler(_xRotation, _yRotation, 0f);

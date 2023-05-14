@@ -16,7 +16,6 @@ using CodeBase.UI.Services.Window;
 using CodeBase.UI.Windows;
 using CodeBase.UI.Windows.Dialogs;
 using CodeBase.UI.Windows.GameMenu;
-using CodeBase.UI.Windows.Input;
 using CodeBase.UI.Windows.Inventory;
 using CodeBase.UI.Windows.Inventory.QuestInventory;
 using CodeBase.UI.Windows.Inventory.WeaponInventory;
@@ -96,11 +95,6 @@ namespace CodeBase.UI.Services.Factory
             instantiate.GetComponentInChildren<MinimapSetTextureRenderer>()?.Construct(_staticDataService.MinimapConfig.RenderTexture);
 
             instantiate.GetComponentInChildren<CameraLookButton>()?.Construct(_inputService);
-            instantiate.GetComponentInChildren<FireButton>()?.Construct(_inputService);
-            instantiate.GetComponentInChildren<JumpButton>()?.Construct(_inputService);
-            instantiate.GetComponentInChildren<WeaponReloadButton>()?.Construct(_inputService);
-            instantiate.GetComponentInChildren<UseAidKitButton>()?.Construct(_inputService);
-            instantiate.GetComponentInChildren<PlayerInteractButton>()?.Construct(_inputService);
 
             QuestPointerWindow = instantiate.GetComponentInChildren<QuestPointerWindow>();
             QuestPointerWindow.Construct(this, _staticDataService, _persistentProgressService);

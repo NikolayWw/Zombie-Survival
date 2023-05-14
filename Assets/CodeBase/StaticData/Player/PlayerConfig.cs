@@ -20,7 +20,6 @@ namespace CodeBase.StaticData.Player
         private void OnValidate()
         {
             MoveStaticData.SwitchMoveConfig.OnValidate();
-            CameraConfig.OnValidate();
         }
     }
 }
