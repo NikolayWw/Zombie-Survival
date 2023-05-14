@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425af89de46ba1e47bf843e4d7908f20, type: 3}
+  m_Name: WeaponConfigContainer
+  m_EditorClassIdentifier: 
+  <ApplyDamageLayer>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1
+  <Melee>k__BackingField:
+  - <Name>k__BackingField: Sword
+    <WeaponId>k__BackingField: 99
+    <Price>k__BackingField: 100
+    <Icon>k__BackingField: {fileID: 21300038, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
+      type: 3}
+    <PrefabInPiece>k__BackingField: {fileID: 123555904853452675, guid: 8ff07fac89646664abef894c8e11ea93,
+      type: 3}
+    <PrefabInHand>k__BackingField: {fileID: 3264492246132924075, guid: e52c124ab0148ec48942baad3ecf597b,
+      type: 3}
+    <HitPushForce>k__BackingField: 2
+    <AttackDistance>k__BackingField: 2
+    <AttackDelay>k__BackingField: 0.2
+    <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
+      type: 3}
+    <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: c072bb335519e044689d591c829340c4,
+      type: 2}
+    <Damage>k__BackingField: 20
+    <AttackAudio>k__BackingField: {fileID: 8300000, guid: ec97380e8c50fba49b68604fd138092e,
+      type: 3}
+  - <Name>k__BackingField: Machete
+    <WeaponId>k__BackingField: 100
+    <Price>k__BackingField: 100
+    <Icon>k__BackingField: {fileID: 21300038, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
+      type: 3}
+    <PrefabInPiece>k__BackingField: {fileID: 1476620362680645113, guid: 1bc21ff4a1a09ba478c1ba8d003bb1d7,
+      type: 3}
+    <PrefabInHand>k__BackingField: {fileID: 9010614112657710731, guid: ee6cea5953049d9469167d58c3de8f61,
+      type: 3}
+    <HitPushForce>k__BackingField: 5
+    <AttackDistance>k__BackingField: 2
+    <AttackDelay>k__BackingField: 0.2
+    <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
+      type: 3}
+    <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: c072bb335519e044689d591c829340c4,
+      type: 2}
+    <Damage>k__BackingField: 40
+    <AttackAudio>k__BackingField: {fileID: 8300000, guid: ec97380e8c50fba49b68604fd138092e,
+      type: 3}
+  <Firearms>k__BackingField:
+  - <Name>k__BackingField: Pistol
+    <WeaponId>k__BackingField: 999
+    <Price>k__BackingField: 150
+    <Icon>k__BackingField: {fileID: 21300004, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
+      type: 3}
+    <PrefabInPiece>k__BackingField: {fileID: 6201103840180661436, guid: 49ffa5de8d337784ea0ef54f463786d9,
+      type: 3}
+    <PrefabInHand>k__BackingField: {fileID: 2541603045988966716, guid: 7e2cc5d26c7e0af4d97e7895d3798484,
+      type: 3}
+    <HitPushForce>k__BackingField: 3
+    <AttackDistance>k__BackingField: 350
+    <AttackDelay>k__BackingField: 0.2
+    <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
+      type: 3}
+    <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: b33401bb7ddac31419ee56b7656891d3,
+      type: 2}
+    <CrosshairConfig>k__BackingField:
+      <Width>k__BackingField: 10
+      <Lenght>k__BackingField: 56
+      <MinSize>k__BackingField: 40
+      <Color>k__BackingField: {r: 1, g: 0, b: 0, a: 0}
+    <ShootType>k__BackingField: 1
+    <MaxMagazine>k__BackingField: 99
+    <Damage>k__BackingField: 55
+    <BuyAmount>k__BackingField: 55
+    <FireAudio>k__BackingField: {fileID: 8300000, guid: 889640170c60e734c8054094c07bc31b,
+      type: 3}
+    <EmptyFireAudio>k__BackingField: {fileID: 8300000, guid: 17c43029193d2854e96f0da2788c2b08,
+      type: 3}
+    <ReloadAudio>k__BackingField: {fileID: 8300000, guid: 111c216adb1e811499d9277f3d81d5ed,
+      type: 3}
+  - <Name>k__BackingField: Pistol Small
+    <WeaponId>k__BackingField: 1001
+    <Price>k__BackingField: 150
+    <Icon>k__BackingField: {fileID: 21300010, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
+      type: 3}
+    <PrefabInPiece>k__BackingField: {fileID: 8241870679444214991, guid: 589b88b71dd56a343a4207b0a4f017cc,
+      type: 3}
+    <PrefabInHand>k__BackingField: {fileID: 6667191964270062055, guid: 4a2d49ca856e9ee409667780288369fb,
+      type: 3}
+    <HitPushForce>k__BackingField: 3
+    <AttackDistance>k__BackingField: 350
+    <AttackDelay>k__BackingField: 0.2
+    <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
+      type: 3}
+    <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: b33401bb7ddac31419ee56b7656891d3,
+      type: 2}
+    <CrosshairConfig>k__BackingField:
+      <Width>k__BackingField: 10
+      <Lenght>k__BackingField: 56
+      <MinSize>k__BackingField: 40
+      <Color>k__BackingField: {r: 1, g: 0, b: 0, a: 0}
+    <ShootType>k__BackingField: 1
+    <MaxMagazine>k__BackingField: 99
+    <Damage>k__BackingField: 55
+    <BuyAmount>k__BackingField: 55
+    <FireAudio>k__BackingField: {fileID: 8300000, guid: 3df4a7c98e81ca843a874f91e2189dc4,
+      type: 3}
+    <EmptyFireAudio>k__BackingField: {fileID: 8300000, guid: 17c43029193d2854e96f0da2788c2b08,
+      type: 3}
+    <ReloadAudio>k__BackingField: {fileID: 8300000, guid: 111c216adb1e811499d9277f3d81d5ed,
+      type: 3}
+  - <Name>k__BackingField: M16
+    <WeaponId>k__BackingField: 1000
+    <Price>k__BackingField: 250
+    <Icon>k__BackingField: {fileID: 21300044, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
+      type: 3}
+    <PrefabInPiece>k__BackingField: {fileID: 7770727228568501025, guid: e9b2469f68e89d14e9515e58b9c58d1f,
+      type: 3}
+    <PrefabInHand>k__BackingField: {fileID: 2379622482194607802, guid: 82c444128dc6f8044b07f49a5085493a,
+      type: 3}
+    <HitPushForce>k__BackingField: 4
+    <AttackDistance>k__BackingField: 500
+    <AttackDelay>k__BackingField: 0.2
+    <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
+      type: 3}
+    <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: b33401bb7ddac31419ee56b7656891d3,
+      type: 2}
+    <CrosshairConfig>k__BackingField:
+      <Width>k__BackingField: 10
+      <Lenght>k__BackingField: 56
+      <MinSize>k__BackingField: 40
+      <Color>k__BackingField: {r: 0.9056604, g: 0.44784957, b: 0, a: 0}
+    <ShootType>k__BackingField: 2
+    <MaxMagazine>k__BackingField: 99
+    <Damage>k__BackingField: 66
+    <BuyAmount>k__BackingField: 15
+    <FireAudio>k__BackingField: {fileID: 8300000, guid: d3c836c96343f8943a8fe9d9ab41e4eb,
+      type: 3}
+    <EmptyFireAudio>k__BackingField: {fileID: 8300000, guid: 17c43029193d2854e96f0da2788c2b08,
+      type: 3}
+    <ReloadAudio>k__BackingField: {fileID: 8300000, guid: 37bb3ecebb749d14b8fa1dfd05221f85,
+      type: 3}
+  - <Name>k__BackingField: Bandi Gun
+    <WeaponId>k__BackingField: 1002
+    <Price>k__BackingField: 250
+    <Icon>k__BackingField: {fileID: 21300002, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
+      type: 3}
+    <PrefabInPiece>k__BackingField: {fileID: 646209045884207072, guid: 53df550ceee3dac43a947d6d5b6881fe,
+      type: 3}
+    <PrefabInHand>k__BackingField: {fileID: 1920424353784316965, guid: 51eeb024040bf4d49a38bc6621a148bc,
+      type: 3}
+    <HitPushForce>k__BackingField: 4
+    <AttackDistance>k__BackingField: 500
+    <AttackDelay>k__BackingField: 0.2
+    <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
+      type: 3}
+    <ShotEffectSettings>k__BackingField: {fileID: 11400000, guid: b33401bb7ddac31419ee56b7656891d3,
+      type: 2}
+    <CrosshairConfig>k__BackingField:
+      <Width>k__BackingField: 10
+      <Lenght>k__BackingField: 56
+      <MinSize>k__BackingField: 40
+      <Color>k__BackingField: {r: 0.9056604, g: 0.44784957, b: 0, a: 0}
+    <ShootType>k__BackingField: 2
+    <MaxMagazine>k__BackingField: 99
+    <Damage>k__BackingField: 65
+    <BuyAmount>k__BackingField: 15
+    <FireAudio>k__BackingField: {fileID: 8300000, guid: 21d78015ca062134a8fe1f2d79b6c7a8,
+      type: 3}
+    <EmptyFireAudio>k__BackingField: {fileID: 8300000, guid: 17c43029193d2854e96f0da2788c2b08,
+      type: 3}
+    <ReloadAudio>k__BackingField: {fileID: 8300000, guid: 37bb3ecebb749d14b8fa1dfd05221f85,
+      type: 3}
+  <GravityGuns>k__BackingField:
+  - <Name>k__BackingField: Gravity Gun
+    <WeaponId>k__BackingField: 1999
+    <Price>k__BackingField: 100
+    <Icon>k__BackingField: {fileID: 21300040, guid: 309ac3eb4cc441349b63128366ca98b6,
+      type: 3}
+    <PrefabInPiece>k__BackingField: {fileID: 2923169098554088047, guid: 5ff542a72b8b43949b9d63a36fdc5ef1,
+      type: 3}
+    <PrefabInHand>k__BackingField: {fileID: 1682052562681019787, guid: f14fd49324f8d9941a4d0fec36009a49,
+      type: 3}
+    <HitPushForce>k__BackingField: 5
+    <AttackDistance>k__BackingField: 15
+    <AttackDelay>k__BackingField: 0.2
+    <WeaponWhereShow>k__BackingField: {fileID: 8300000, guid: 7752d66006ed6d2449436247673b0e70,
+      type: 3}
+    <ShotEffectSettings>k__BackingField: {fileID: 0}
+    <RigidbodyAngularDrag>k__BackingField: 20
+    <RigidbodyDrag>k__BackingField: 20
+    <SpringConnectedAnchorOffsetZ>k__BackingField: 1
+    <SpringBrakeForce>k__BackingField: 1500
+    <TimeToSetBrakeForce>k__BackingField: 0.5
+    <SpringSpring>k__BackingField: 1000
+    <SpringDamper>k__BackingField: 100
+    <PushForce>k__BackingField: 15
