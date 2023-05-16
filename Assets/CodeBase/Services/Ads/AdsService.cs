@@ -4,7 +4,7 @@ using UnityEngine.Advertisements;
 
 namespace CodeBase.Services.Ads
 {
-    public class AdsService : IAdsService, IUnityAdsListener
+    public class AdsService : IAdsService, IUnityAdsInitializationListener, IUnityAdsShowListener
     {
         private const string AndroidGameId = "5262726";
         private const string IOSGameId = "5262727";
@@ -12,44 +12,32 @@ namespace CodeBase.Services.Ads
         private const string RewardedPlacementIdAndroid = "Rewarded_Android";
         private const string RewardedPlacementIdIOS = "Rewarded_iOS";
 
-        public bool IsRewardedVideoReady => Advertisement.IsReady(_placementI);
         public Action RewardedVideoReady { get; set; }
 
         private Action _onVideoFinished;
+
         private string _gameId = string.Empty;
         private string _placementI = string.Empty;
 
         public void Initialize()
         {
-            switch (Application.platform)
+            if (Application.platform == RuntimePlatform.Android)
             {
-                case RuntimePlatform.IPhonePlayer:
-                    _gameId = IOSGameId;
-                    _placementI = RewardedPlacementIdIOS;
-                    break;
-
-                case RuntimePlatform.Android:
-                    _gameId = AndroidGameId;
-                    _placementI = RewardedPlacementIdAndroid;
-                    break;
-
-                case RuntimePlatform.WindowsEditor:
-                    _gameId = AndroidGameId;
-                    _placementI = RewardedPlacementIdAndroid;
-                    break;
-
-                default:
-                    Debug.Log("Unsupported platform for ads");
-                    break;
+                _gameId = AndroidGameId;
+                _placementI = RewardedPlacementIdAndroid;
+            }
+            else
+            {
+                _gameId = IOSGameId;
+                _placementI = RewardedPlacementIdIOS;
             }
 
-            Advertisement.AddListener(this);
-            Advertisement.Initialize(_gameId);
+            Advertisement.Initialize(_gameId, true, this);
         }
 
         public void ShowRewardedVideo(Action onVideoFinished)
         {
-            Advertisement.Show(_placementI);
+            Advertisement.Show(_placementI, this);
             _onVideoFinished = onVideoFinished;
         }
 
@@ -59,31 +47,47 @@ namespace CodeBase.Services.Ads
                 RewardedVideoReady?.Invoke();
         }
 
-        public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+        public void OnInitializationComplete()
         {
-            switch (showResult)
+            Debug.Log("Ads initialize Complete");
+        }
+
+        public void OnInitializationFailed(UnityAdsInitializationError error, string message)
+        {
+            Debug.LogError($"OnInitializationFailed {error} message:{message}");
+        }
+
+        public void OnUnityAdsShowStart(string placementId)
+        {
+        }
+
+        public void OnUnityAdsShowClick(string placementId)
+        { }
+
+        public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
+        {
+            Debug.LogError($"OnUnityAdsShowFailure {error} message:{message}");
+        }
+
+        public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
+        {
+            switch (showCompletionState)
             {
-                case ShowResult.Failed:
-                    Debug.LogError($"OnUnityAdsDidFinish {showResult}");
+                case UnityAdsShowCompletionState.SKIPPED:
+                case UnityAdsShowCompletionState.COMPLETED:
+                    _onVideoFinished?.Invoke();
+
                     break;
 
-                case ShowResult.Skipped:
-                case ShowResult.Finished:
-                    _onVideoFinished?.Invoke();
+                case UnityAdsShowCompletionState.UNKNOWN:
+                    Debug.LogError($"OnUnityAdsShowComplete {showCompletionState}");
                     break;
 
                 default:
-                    Debug.LogError($"OnUnityAdsDidFinish {showResult}");
                     break;
             }
 
             _onVideoFinished = null;
         }
-
-        public void OnUnityAdsDidError(string message)
-        { }
-
-        public void OnUnityAdsDidStart(string placementId)
-        { }
     }
 }
