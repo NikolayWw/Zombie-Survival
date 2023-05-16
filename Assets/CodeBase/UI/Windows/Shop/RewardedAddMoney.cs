@@ -32,14 +32,15 @@ namespace CodeBase.UI.Windows.Shop
             _adsService.RewardedVideoReady -= RefreshAvailableAd;
 
         private void OnShowAdClicked() =>
-            _adsService.ShowRewardedVideo(OnVideoFinished);
+            _adsService.ShowRewarded(OnVideoFinished);
 
         private void OnVideoFinished() =>
             _persistentProgressService.PlayerProgress.PlayerData.IncrementMoney(100);
 
         private void RefreshAvailableAd()
         {
-            bool ready = _adsService.IsRewardedVideoReady;
+            bool ready = _adsService.AdsReady;
+
             foreach (var activeObject in _adActiveObjects) activeObject.SetActive(ready);
             ready = !ready;
             foreach (var inActiveObject in _adInActiveObjects) inActiveObject.SetActive(ready);

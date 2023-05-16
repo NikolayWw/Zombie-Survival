@@ -8,5 +8,7 @@
         public const string MainMenuSceneKey = "MainMenu";
         public const string MainSceneKey = "Main";
         public const string InitialSceneKey = "Initial";
+
+        public const bool IsAdsTestMod = true;
     }
 }

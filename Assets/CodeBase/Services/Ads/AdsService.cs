@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CodeBase.Data;
+using System;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
 namespace CodeBase.Services.Ads
 {
-    public class AdsService : IAdsService, IUnityAdsInitializationListener, IUnityAdsShowListener
+    public class AdsService : IAdsService, IUnityAdsLoadListener, IUnityAdsShowListener, IUnityAdsInitializationListener
     {
         private const string AndroidGameId = "5262726";
         private const string IOSGameId = "5262727";
@@ -19,6 +20,8 @@ namespace CodeBase.Services.Ads
         private string _gameId = string.Empty;
         private string _placementI = string.Empty;
 
+        public bool AdsReady { get; private set; } = true;
+
         public void Initialize()
         {
             if (Application.platform == RuntimePlatform.Android)
@@ -32,41 +35,21 @@ namespace CodeBase.Services.Ads
                 _placementI = RewardedPlacementIdIOS;
             }
 
-            Advertisement.Initialize(_gameId, true, this);
+            Advertisement.Initialize(_gameId, GameConstants.IsAdsTestMod, this);
+            Advertisement.Load(_placementI, this);
         }
 
-        public void ShowRewardedVideo(Action onVideoFinished)
+        public void ShowRewarded(Action onVideoFinished)
         {
-            Advertisement.Show(_placementI, this);
+            AdsReady = false;
             _onVideoFinished = onVideoFinished;
+            Advertisement.Show(_placementI, this);
         }
 
-        public void OnUnityAdsReady(string placementId)
+        public void OnUnityAdsAdLoaded(string placementId)
         {
-            if (placementId == _placementI)
-                RewardedVideoReady?.Invoke();
-        }
-
-        public void OnInitializationComplete()
-        {
-            Debug.Log("Ads initialize Complete");
-        }
-
-        public void OnInitializationFailed(UnityAdsInitializationError error, string message)
-        {
-            Debug.LogError($"OnInitializationFailed {error} message:{message}");
-        }
-
-        public void OnUnityAdsShowStart(string placementId)
-        {
-        }
-
-        public void OnUnityAdsShowClick(string placementId)
-        { }
-
-        public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
-        {
-            Debug.LogError($"OnUnityAdsShowFailure {error} message:{message}");
+            AdsReady = true;
+            RewardedVideoReady?.Invoke();
         }
 
         public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
@@ -76,18 +59,43 @@ namespace CodeBase.Services.Ads
                 case UnityAdsShowCompletionState.SKIPPED:
                 case UnityAdsShowCompletionState.COMPLETED:
                     _onVideoFinished?.Invoke();
-
                     break;
 
                 case UnityAdsShowCompletionState.UNKNOWN:
-                    Debug.LogError($"OnUnityAdsShowComplete {showCompletionState}");
+                    Debug.LogError("OnUnityAdsShowComplete " + showCompletionState);
                     break;
 
                 default:
                     break;
             }
 
-            _onVideoFinished = null;
+            Advertisement.Load(_placementI, this);
         }
+
+        public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
+        {
+            AdsReady = false;
+            Debug.LogError($"OnUnityAdsFailedToLoad {error } {message}");
+        }
+
+        public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
+        {
+            Debug.LogError($"OnUnityAdsShowFailure {error } {message}");
+        }
+
+        public void OnInitializationFailed(UnityAdsInitializationError error, string message)
+        {
+            AdsReady = false;
+            Debug.LogError($"OnInitializationFailed {error } {message}");
+        }
+
+        public void OnUnityAdsShowStart(string placementId)
+        { }
+
+        public void OnUnityAdsShowClick(string placementId)
+        { }
+
+        public void OnInitializationComplete()
+        { }
     }
 }
