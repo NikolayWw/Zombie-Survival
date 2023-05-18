@@ -86,7 +86,7 @@ namespace CodeBase.UI.Services.Factory
         public void CreateHUD(IWindowService windowService)
         {
             GameObject instantiate = _assetProvider.Instantiate(AssetsPath.UIHud, _uiRoot);
-            instantiate.GetComponent<OpenWindowButton>()?.Construct(windowService);
+            instantiate.GetComponent<OpenGameMenuButton>()?.Construct(windowService, _inputService);
             instantiate.GetComponentInChildren<UIWeaponSlotsContainer>()?.Construct(this, _persistentProgressService, windowService);
             instantiate.GetComponentInChildren<UIQuestItemsSlotsContainer>()?.Construct(this, _persistentProgressService, _logicFactory);
             instantiate.GetComponentInChildren<ShowMoneyWindow>()?.Construct(_persistentProgressService);

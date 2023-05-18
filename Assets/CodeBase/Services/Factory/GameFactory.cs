@@ -148,6 +148,7 @@ namespace CodeBase.Services.Factory
             instance.GetComponent<PlayerApplyDamage>()?.Construct(_persistentProgressService);
             instance.GetComponent<PlayerUseAidKit>()?.Construct(_inputService, _persistentProgressService, _dataService);
             instance.GetComponent<PlayerInteraction>()?.Construct(_dataService, _inputService, _mainCamera);
+            instance.GetComponent<PlayerChangeWeaponKeyboard>()?.Construct(_logicFactory, _inputService);
             instance.GetComponentInChildren<PlayerRotateBody>()?.Construct(_mainCamera, _dataService);
             instance.GetComponentInChildren<SpinningBehindCamera>()?.Construct(_mainCamera);
 

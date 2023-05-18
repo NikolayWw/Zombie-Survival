@@ -1,13 +1,12 @@
 ﻿using CodeBase.Services.Pause;
 using CodeBase.UI.Services.Window;
 using System.Linq;
-using UnityEngine;
 
 namespace CodeBase.Logic.Pause
 {
     public class SwitchPlayerState
     {
-        private readonly WindowId[] PauseWindows = {  WindowId.GameMenuWindow };
+        private readonly WindowId[] PauseWindows = { WindowId.GameMenuWindow };
         private readonly WindowId[] FreezeWindows = { WindowId.ShopWindow };
 
         private readonly IPauseService _pauseService;
@@ -26,7 +25,7 @@ namespace CodeBase.Logic.Pause
             _windowService.OnClose += Unfreeze;
             _windowService.OnClose += UnPause;
         }
-       
+
         private void Pause(WindowId id)
         {
             if (_isPause)

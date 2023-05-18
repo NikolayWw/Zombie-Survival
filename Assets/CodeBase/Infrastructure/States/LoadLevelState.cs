@@ -121,6 +121,7 @@ namespace CodeBase.Infrastructure.States
             _logicFactory.InitSwitchPlayerState(_pauseService, _windowService);
             _logicFactory.InitShotEffectPool(_gameFactory);
             _logicFactory.InitQuestPlayer(_dataService, _gameFactory, _windowService);
+            _logicFactory.InitLockCursor(_windowService);
         }
 
         private void InitPlayer()

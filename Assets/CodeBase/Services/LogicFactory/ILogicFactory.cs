@@ -19,15 +19,11 @@ namespace CodeBase.Services.LogicFactory
         QuestPlayer QuestPlayer { get; }
 
         void Clean();
-
         void InitWeaponSlotsHandler(IPersistentProgressService persistentProgressService, IGameFactory gameFactory, IStaticDataService dataService, IUIFactory uiFactory);
-
         void InitSwitchPlayerState(IPauseService pauseService, IWindowService windowService);
-
         void InitQuestSlotsHandler(IPersistentProgressService persistentProgressService, IStaticDataService dataService);
-
         void InitShotEffectPool(IGameFactory gameFactory);
-
         void InitQuestPlayer(IStaticDataService dataService, IGameFactory gameFactory, IWindowService windowService);
+        void InitLockCursor(IWindowService windowService);
     }
 }

@@ -12,6 +12,8 @@ namespace CodeBase.Services.Input
         bool IsFirePressed { get; }
         Action OnUseAidKit { get; set; }
         Vector2 CameraAxis { get; }
+        Action<int> OnPressSelectSlot { get; set; }
+        Action OnOpenGameMenu { get; set; }
 
         void Clean();
 

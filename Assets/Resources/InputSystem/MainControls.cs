@@ -288,6 +288,95 @@ public partial class @MainControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Inventory"",
+            ""id"": ""e2499d0c-3d19-4355-b78a-1f2de97c1a05"",
+            ""actions"": [
+                {
+                    ""name"": ""SelectWeaponSlot"",
+                    ""type"": ""Button"",
+                    ""id"": ""1a8cf965-fe80-41cb-885e-e8febf00bdf1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""608ea1df-15fd-4d91-8bfd-aab624355871"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=0)"",
+                    ""groups"": """",
+                    ""action"": ""SelectWeaponSlot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""827185bd-127a-4cd9-8827-1fd9f434c845"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale"",
+                    ""groups"": """",
+                    ""action"": ""SelectWeaponSlot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5489b21c-8878-435b-9bf4-d4fe788980ee"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""SelectWeaponSlot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76025d16-856b-4c8c-835a-ee63840e2ce2"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=3)"",
+                    ""groups"": """",
+                    ""action"": ""SelectWeaponSlot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""877c96e3-a999-4886-8b82-44e77b184aaa"",
+            ""actions"": [
+                {
+                    ""name"": ""OpenGameMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5cc21c4-ed7e-4127-b197-c1016d353181"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""dc17240a-551d-4555-8ccb-e20a5e076381"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenGameMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -303,6 +392,12 @@ public partial class @MainControls: IInputActionCollection2, IDisposable
         m_Weapon = asset.FindActionMap("Weapon", throwIfNotFound: true);
         m_Weapon_Fire = m_Weapon.FindAction("Fire", throwIfNotFound: true);
         m_Weapon_Reload = m_Weapon.FindAction("Reload", throwIfNotFound: true);
+        // Inventory
+        m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
+        m_Inventory_SelectWeaponSlot = m_Inventory.FindAction("SelectWeaponSlot", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_OpenGameMenu = m_UI.FindAction("OpenGameMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -492,6 +587,98 @@ public partial class @MainControls: IInputActionCollection2, IDisposable
         }
     }
     public WeaponActions @Weapon => new WeaponActions(this);
+
+    // Inventory
+    private readonly InputActionMap m_Inventory;
+    private List<IInventoryActions> m_InventoryActionsCallbackInterfaces = new List<IInventoryActions>();
+    private readonly InputAction m_Inventory_SelectWeaponSlot;
+    public struct InventoryActions
+    {
+        private @MainControls m_Wrapper;
+        public InventoryActions(@MainControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SelectWeaponSlot => m_Wrapper.m_Inventory_SelectWeaponSlot;
+        public InputActionMap Get() { return m_Wrapper.m_Inventory; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InventoryActions set) { return set.Get(); }
+        public void AddCallbacks(IInventoryActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InventoryActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InventoryActionsCallbackInterfaces.Add(instance);
+            @SelectWeaponSlot.started += instance.OnSelectWeaponSlot;
+            @SelectWeaponSlot.performed += instance.OnSelectWeaponSlot;
+            @SelectWeaponSlot.canceled += instance.OnSelectWeaponSlot;
+        }
+
+        private void UnregisterCallbacks(IInventoryActions instance)
+        {
+            @SelectWeaponSlot.started -= instance.OnSelectWeaponSlot;
+            @SelectWeaponSlot.performed -= instance.OnSelectWeaponSlot;
+            @SelectWeaponSlot.canceled -= instance.OnSelectWeaponSlot;
+        }
+
+        public void RemoveCallbacks(IInventoryActions instance)
+        {
+            if (m_Wrapper.m_InventoryActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInventoryActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InventoryActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InventoryActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InventoryActions @Inventory => new InventoryActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_OpenGameMenu;
+    public struct UIActions
+    {
+        private @MainControls m_Wrapper;
+        public UIActions(@MainControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @OpenGameMenu => m_Wrapper.m_UI_OpenGameMenu;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @OpenGameMenu.started += instance.OnOpenGameMenu;
+            @OpenGameMenu.performed += instance.OnOpenGameMenu;
+            @OpenGameMenu.canceled += instance.OnOpenGameMenu;
+        }
+
+        private void UnregisterCallbacks(IUIActions instance)
+        {
+            @OpenGameMenu.started -= instance.OnOpenGameMenu;
+            @OpenGameMenu.performed -= instance.OnOpenGameMenu;
+            @OpenGameMenu.canceled -= instance.OnOpenGameMenu;
+        }
+
+        public void RemoveCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -504,5 +691,13 @@ public partial class @MainControls: IInputActionCollection2, IDisposable
     {
         void OnFire(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+    }
+    public interface IInventoryActions
+    {
+        void OnSelectWeaponSlot(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnOpenGameMenu(InputAction.CallbackContext context);
     }
 }

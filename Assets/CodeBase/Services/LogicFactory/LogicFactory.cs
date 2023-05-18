@@ -1,4 +1,5 @@
 ﻿using CodeBase.Infrastructure.Logic;
+using CodeBase.Logic;
 using CodeBase.Logic.Inventory.QuestItemInventory;
 using CodeBase.Logic.Inventory.WeaponInventory;
 using CodeBase.Logic.ObjectPool;
@@ -21,7 +22,9 @@ namespace CodeBase.Services.LogicFactory
         public QuestSlotsHandler QuestSlotsHandler { get; private set; }
         public ShotEffectPool ShotEffectPool { get; private set; }
         public QuestPlayer QuestPlayer { get; private set; }
+
         private SwitchPlayerState _switchPlayerState;
+        private LockCursor _lockCursor;
 
         public LogicFactory(ICoroutineRunner coroutineRunner)
         {
@@ -43,6 +46,11 @@ namespace CodeBase.Services.LogicFactory
         public void InitQuestPlayer(IStaticDataService dataService, IGameFactory gameFactory, IWindowService windowService) =>
             QuestPlayer = new QuestPlayer(_coroutineRunner, dataService, gameFactory, windowService);
 
+        public void InitLockCursor(IWindowService windowService)
+        {
+            _lockCursor = new LockCursor(windowService);
+        }
+
         public void Clean()
         {
             WeaponSlotsHandler = null;
@@ -50,6 +58,9 @@ namespace CodeBase.Services.LogicFactory
             _switchPlayerState = null;
             ShotEffectPool = null;
             QuestPlayer = null;
+
+            _lockCursor?.Clenup();
+            _lockCursor = null;
         }
     }
 }
