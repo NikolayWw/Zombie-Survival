@@ -76,7 +76,7 @@ namespace CodeBase.Infrastructure.States
 
             InitPlayer();
             InitCamera(mainCamera.gameObject, _gameFactory.Player.transform);
-            _uiFactory.CreateMinimap(_gameFactory.Player.transform);
+            //_uiFactory.CreateMinimap(_gameFactory.Player.transform);
             InitObjectsPiece(_dataService.ForLevel(sceneKey));
             InitQuestPointer();
 
