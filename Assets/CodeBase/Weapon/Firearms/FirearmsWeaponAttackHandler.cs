@@ -16,7 +16,7 @@ namespace CodeBase.Weapon.Firearms
         private FirearmsConfig _config;
         private FirearmWeaponData _weaponData;
         private Crosshair _crosshair;
-        private Action _fireUpdate = FireEmptyMethod;
+        private Action _fireUpdate = Null;
 
         private bool _singleShootToggle;
 
@@ -51,7 +51,7 @@ namespace CodeBase.Weapon.Firearms
 
         protected override void OnFreeze()
         {
-            _fireUpdate = FireEmptyMethod;
+            _fireUpdate = Null;
         }
 
         protected override void OnUnfreeze()
@@ -84,7 +84,7 @@ namespace CodeBase.Weapon.Firearms
             switch (type)
             {
                 case FirearmWeaponShootType.None:
-                    _fireUpdate = FireEmptyMethod;
+                    _fireUpdate = Null;
                     break;
 
                 case FirearmWeaponShootType.Single:
@@ -193,7 +193,7 @@ namespace CodeBase.Weapon.Firearms
                    && Animator.IsReloading == false;
         }
 
-        private static void FireEmptyMethod()
+        private static void Null()
         { }
     }
 }

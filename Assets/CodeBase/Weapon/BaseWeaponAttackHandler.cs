@@ -31,6 +31,7 @@ namespace CodeBase.Weapon
             Animator = playerAnimator;
             AudioPlayer = audioPlayer;
             InputService = inputService;
+
             Timer = new WeaponAttackTimer(Config.AttackDelay);
             Animator.OnEvent += AnimationEventReader;
         }
@@ -82,21 +83,16 @@ namespace CodeBase.Weapon
         }
 
         protected virtual void OnPause()
-        {
-        }
+        { }
 
         protected virtual void OnPlay()
-
-        {
-        }
+        { }
 
         protected virtual void OnFreeze()
-        {
-        }
+        { }
 
         protected virtual void OnUnfreeze()
-        {
-        }
+        { }
 
         #endregion Pause
     }

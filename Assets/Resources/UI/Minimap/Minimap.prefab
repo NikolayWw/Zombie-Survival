@@ -124,12 +124,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapCamera: {fileID: 7043180062683252816}
   _clampPosSettings:
-    <XMinZoomPosLeft>k__BackingField: -380
-    <XMinZoomPosRight>k__BackingField: 31
-    <XMaxZoomPosLeft>k__BackingField: -159.6
-    <XMaxZoomPosRight>k__BackingField: -159.6
-    <ZMinZoomPosUp>k__BackingField: 14
-    <ZMinZoomPosDown>k__BackingField: -216
+    <XMinZoomPosLeft>k__BackingField: -349
+    <XMinZoomPosRight>k__BackingField: 30.5
+    <XMaxZoomPosLeft>k__BackingField: -160
+    <XMaxZoomPosRight>k__BackingField: -160
+    <ZMinZoomPosUp>k__BackingField: 15
+    <ZMinZoomPosDown>k__BackingField: -201
     <ZMaxZoomPosUp>k__BackingField: -93.2
     <ZMaxZoomPosDown>k__BackingField: -93.2
 --- !u!1 &7043180062606469487
@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7043180062683252819}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -159.6, y: 456.4509, z: -93.2}
+  m_LocalPosition: {x: -160, y: 456.4509, z: -95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

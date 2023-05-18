@@ -32,7 +32,7 @@ MonoBehaviour:
     - _inspectorName: Turnip
       <Id>k__BackingField: 1
       <Amount>k__BackingField: 1
-      <Position>k__BackingField: {x: -148.28, y: 1.73, z: 41.84}
+      <Position>k__BackingField: {x: -87.87664, y: 1.2418172, z: -6.316562}
     - _inspectorName: StoneTablet
       <Id>k__BackingField: 2
       <Amount>k__BackingField: 1
@@ -40,23 +40,23 @@ MonoBehaviour:
     - _inspectorName: Turnip
       <Id>k__BackingField: 1
       <Amount>k__BackingField: 1
-      <Position>k__BackingField: {x: -147.16336, y: 1.6881828, z: 41.38656}
+      <Position>k__BackingField: {x: -86.76, y: 1.2, z: -6.77}
     - _inspectorName: Turnip
       <Id>k__BackingField: 1
       <Amount>k__BackingField: 1
-      <Position>k__BackingField: {x: -146.55714, y: 1.7385938, z: 42.101746}
+      <Position>k__BackingField: {x: -86.153786, y: 1.250411, z: -6.054813}
     - _inspectorName: Turnip
       <Id>k__BackingField: 1
       <Amount>k__BackingField: 1
-      <Position>k__BackingField: {x: -147.8999, y: 1.7680442, z: 42.676258}
+      <Position>k__BackingField: {x: -87.496544, y: 1.2798615, z: -5.4803004}
     - _inspectorName: Turnip
       <Id>k__BackingField: 1
       <Amount>k__BackingField: 1
-      <Position>k__BackingField: {x: -147.26988, y: 1.72, z: 42.45473}
+      <Position>k__BackingField: {x: -86.86652, y: 1.2318172, z: -5.7018275}
     - _inspectorName: Turnip
       <Id>k__BackingField: 1
       <Amount>k__BackingField: 1
-      <Position>k__BackingField: {x: -147.69226, y: 1.7084785, z: 41.600647}
+      <Position>k__BackingField: {x: -87.2889, y: 1.2202957, z: -6.5559115}
     <EnemySpawnStaticDataList>k__BackingField:
     - _inspectorName: Zombie2
       <EnemyId>k__BackingField: 2
@@ -180,7 +180,7 @@ MonoBehaviour:
       <Position>k__BackingField: {x: -100.37259, y: 5.552, z: -51.429504}
     - _inspectorName: Lobart_Turnip
       <Id>k__BackingField: 2
-      <Position>k__BackingField: {x: -148.1, y: 2.58, z: 42.43}
+      <Position>k__BackingField: {x: -87.09464, y: 1.2608173, z: -6.0315623}
     <SaveZoneList>k__BackingField:
     - <Position>k__BackingField: {x: -108.92, y: 1.74, z: -5.25}
       <Rotate>k__BackingField: {x: -0, y: 0.8864431, z: -0, w: 0.4628377}

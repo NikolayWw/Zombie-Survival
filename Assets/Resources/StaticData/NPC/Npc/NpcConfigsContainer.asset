@@ -50,9 +50,6 @@ MonoBehaviour:
     - _inspectorName: Firearms_M16
       <IsAidKit>k__BackingField: 0
       <WeaponId>k__BackingField: 1000
-    - _inspectorName: GravityGun_Gun
-      <IsAidKit>k__BackingField: 0
-      <WeaponId>k__BackingField: 1999
   - _inspectorName: Sagitta
     <NpcId>k__BackingField: 3
     <Prefab>k__BackingField: {fileID: 2971817897902170902, guid: c97628fd50c0a0840aa917e9e048b48d,

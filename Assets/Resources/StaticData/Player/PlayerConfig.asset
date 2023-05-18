@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MoveStaticData>k__BackingField:
     <GroundMoveConfig>k__BackingField:
-      <Speed>k__BackingField: 6
+      <Speed>k__BackingField: 15
       <JumpForce>k__BackingField: 10
       <WhatIsGround>k__BackingField:
         serializedVersion: 2
