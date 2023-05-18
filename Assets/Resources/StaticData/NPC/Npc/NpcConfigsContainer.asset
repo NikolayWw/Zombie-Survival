@@ -35,8 +35,8 @@ MonoBehaviour:
     <IconConfig>k__BackingField:
       <Icon>k__BackingField: {fileID: 21300000, guid: fa6f57b3e2c46c949ad00a98ceae6b39,
         type: 3}
-      <MinZoomScale>k__BackingField: {x: 2, y: 2, z: 1}
-      <MaxZoomScale>k__BackingField: {x: 25, y: 25, z: 1}
+      <MinZoomScale>k__BackingField: {x: 1, y: 1, z: 1}
+      <MaxZoomScale>k__BackingField: {x: 15, y: 15, z: 1}
     <ShopConfigs>k__BackingField:
     - _inspectorName: AidKit
       <IsAidKit>k__BackingField: 1
@@ -60,8 +60,8 @@ MonoBehaviour:
     <IconConfig>k__BackingField:
       <Icon>k__BackingField: {fileID: 21300000, guid: 626f8a0a4b763d847bce7fc4c36a483e,
         type: 3}
-      <MinZoomScale>k__BackingField: {x: 2, y: 2, z: 1}
-      <MaxZoomScale>k__BackingField: {x: 25, y: 25, z: 1}
+      <MinZoomScale>k__BackingField: {x: 1, y: 1, z: 1}
+      <MaxZoomScale>k__BackingField: {x: 14, y: 14, z: 1}
     <ShopConfigs>k__BackingField: []
   - _inspectorName: Thekla
     <NpcId>k__BackingField: 4
