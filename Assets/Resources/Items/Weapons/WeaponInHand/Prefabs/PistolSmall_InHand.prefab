@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7093797058170571744}
   - component: {fileID: 7067712544734839990}
   - component: {fileID: 7076157014575670608}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Wep_Pistol_Small_Slide_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.06020711, z: 0.06594971}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7092267207890289824}
   m_RootOrder: 1
@@ -51,10 +52,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7090522574033076010
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +94,7 @@ GameObject:
   - component: {fileID: 7093992313052351382}
   - component: {fileID: 7069089748544749342}
   - component: {fileID: 7075372751498653416}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Wep_Pistol_Small_Trigger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,6 +111,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.023099044, z: 0.059143003}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7092267207890289824}
   m_RootOrder: 2
@@ -130,10 +135,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -158,6 +165,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7090590739957795324
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +177,7 @@ GameObject:
   - component: {fileID: 7092267207890289824}
   - component: {fileID: 7067507487953169406}
   - component: {fileID: 7077054315617275556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Wep_Pistol_Small_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,6 +194,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.11320323, z: 0, w: 0.9935719}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7092208819893339266}
   - {fileID: 7093797058170571744}
@@ -212,10 +221,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -240,6 +251,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7090802042416054718
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +263,7 @@ GameObject:
   - component: {fileID: 7092208819893339266}
   - component: {fileID: 7068331372390131210}
   - component: {fileID: 7077069551424171102}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Wep_Pistol_Small_Mag_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,6 +280,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.007355333, z: 0.0043997276}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7092267207890289824}
   m_RootOrder: 0
@@ -291,10 +304,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -319,29 +334,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2311968588601261549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6667191964270062055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b346a2151e459784ca7cb4167d594194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <WeaponHitEffect>k__BackingField: {fileID: 6115254450162237246}
-  _shotEffect: {fileID: 6419050790159473833}
-  _spread:
-    accuracyDropPerShot: 15
-    _lerpRate: 100
-    _accuracyLimit: 50
-  _hideAimingRenderers:
-  - {fileID: 7077054315617275556}
-  - {fileID: 7077069551424171102}
-  - {fileID: 7076157014575670608}
-  - {fileID: 7075372751498653416}
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &1221771308210383584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -486,12 +479,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edf27592a07a69f4a8a360a013b9b635, type: 3}
---- !u!1 &6667191964270062055 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4195405788240005164, guid: edf27592a07a69f4a8a360a013b9b635,
-    type: 3}
-  m_PrefabInstance: {fileID: 7403790873110913483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &899752263415214180 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7692996406331150767, guid: edf27592a07a69f4a8a360a013b9b635,
@@ -510,3 +497,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5d433627c1c6944a66e03e1a4bbfeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6667191964270062055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4195405788240005164, guid: edf27592a07a69f4a8a360a013b9b635,
+    type: 3}
+  m_PrefabInstance: {fileID: 7403790873110913483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2311968588601261549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6667191964270062055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b346a2151e459784ca7cb4167d594194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WeaponHitEffect>k__BackingField: {fileID: 6115254450162237246}
+  _shotEffect: {fileID: 6419050790159473833}
+  _spread:
+    accuracyDropPerShot: 15
+    _lerpRate: 100
+    _accuracyLimit: 50
