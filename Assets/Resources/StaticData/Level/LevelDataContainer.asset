@@ -36,7 +36,7 @@ MonoBehaviour:
     - _inspectorName: StoneTablet
       <Id>k__BackingField: 2
       <Amount>k__BackingField: 1
-      <Position>k__BackingField: {x: -100.13022, y: 4.737, z: -51.339687}
+      <Position>k__BackingField: {x: -100.13022, y: 5.15, z: -51.339687}
     - _inspectorName: Turnip
       <Id>k__BackingField: 1
       <Amount>k__BackingField: 1
@@ -57,7 +57,55 @@ MonoBehaviour:
       <Id>k__BackingField: 1
       <Amount>k__BackingField: 1
       <Position>k__BackingField: {x: -147.69226, y: 1.7084785, z: 41.600647}
-    <EnemySpawnStaticDataList>k__BackingField: []
+    <EnemySpawnStaticDataList>k__BackingField:
+    - _inspectorName: Zombie2
+      <EnemyId>k__BackingField: 2
+      <Position>k__BackingField: {x: -226.58, y: 2.56, z: -191.2}
+    - _inspectorName: Zombie1
+      <EnemyId>k__BackingField: 1
+      <Position>k__BackingField: {x: -223.56, y: 2.56, z: -190.15001}
+    - _inspectorName: Zombie1
+      <EnemyId>k__BackingField: 1
+      <Position>k__BackingField: {x: -223.21, y: 2.56, z: -193.58}
+    - _inspectorName: Zombie2
+      <EnemyId>k__BackingField: 2
+      <Position>k__BackingField: {x: -225.04, y: 2.56, z: -195.28}
+    - _inspectorName: Zombie2
+      <EnemyId>k__BackingField: 2
+      <Position>k__BackingField: {x: -170.06, y: 6.34, z: -163.68001}
+    - _inspectorName: Zombie1
+      <EnemyId>k__BackingField: 1
+      <Position>k__BackingField: {x: -168.23001, y: 6.34, z: -161.98001}
+    - _inspectorName: Zombie1
+      <EnemyId>k__BackingField: 1
+      <Position>k__BackingField: {x: -168.58, y: 6.34, z: -158.55002}
+    - _inspectorName: Zombie2
+      <EnemyId>k__BackingField: 2
+      <Position>k__BackingField: {x: -171.6, y: 6.34, z: -159.6}
+    - _inspectorName: Zombie2
+      <EnemyId>k__BackingField: 2
+      <Position>k__BackingField: {x: -144.22, y: 2.44, z: -104.03}
+    - _inspectorName: Zombie1
+      <EnemyId>k__BackingField: 1
+      <Position>k__BackingField: {x: -141.2, y: 2.44, z: -102.98}
+    - _inspectorName: Zombie1
+      <EnemyId>k__BackingField: 1
+      <Position>k__BackingField: {x: -140.85, y: 2.44, z: -106.41}
+    - _inspectorName: Zombie2
+      <EnemyId>k__BackingField: 2
+      <Position>k__BackingField: {x: -142.68, y: 2.44, z: -108.11}
+    - _inspectorName: Zombie2
+      <EnemyId>k__BackingField: 2
+      <Position>k__BackingField: {x: -140.04, y: 2.44, z: -108.75}
+    - _inspectorName: Zombie2
+      <EnemyId>k__BackingField: 2
+      <Position>k__BackingField: {x: -98.96, y: 2.97, z: -57.79}
+    - _inspectorName: Zombie1
+      <EnemyId>k__BackingField: 1
+      <Position>k__BackingField: {x: -100.6, y: 2.97, z: -56.12}
+    - _inspectorName: Zombie1
+      <EnemyId>k__BackingField: 1
+      <Position>k__BackingField: {x: -98.05979, y: 2.97, z: -56.37164}
     <NpcSpawnStaticDataList>k__BackingField:
     - _inspectorName: Lobart
       <NpcId>k__BackingField: 1
@@ -92,7 +140,28 @@ MonoBehaviour:
       <QuestPointId>k__BackingField: 4
       <SphereRadius>k__BackingField: 1.15
       <Position>k__BackingField: {x: -219.673, y: 6.367935, z: -182.074}
-    <PropsSpawnStaticDataList>k__BackingField: []
+    <PropsSpawnStaticDataList>k__BackingField:
+    - _inspectorName: Box1
+      <PropsId>k__BackingField: 1
+      <Position>k__BackingField: {x: -90.07, y: 2.04, z: -12.57}
+    - _inspectorName: Box3
+      <PropsId>k__BackingField: 3
+      <Position>k__BackingField: {x: -92.59, y: 2.04, z: -11.41}
+    - _inspectorName: Box2
+      <PropsId>k__BackingField: 2
+      <Position>k__BackingField: {x: -89.73, y: 1.67, z: -7.46}
+    - _inspectorName: Box2
+      <PropsId>k__BackingField: 2
+      <Position>k__BackingField: {x: -90.02, y: 2.02, z: -10.88}
+    - _inspectorName: Box1
+      <PropsId>k__BackingField: 1
+      <Position>k__BackingField: {x: -92.62, y: 2.71, z: -17.45}
+    - _inspectorName: Box3
+      <PropsId>k__BackingField: 3
+      <Position>k__BackingField: {x: -91.85021, y: 2.04, z: -13.387814}
+    - _inspectorName: Box2
+      <PropsId>k__BackingField: 2
+      <Position>k__BackingField: {x: -91.16, y: 1.67, z: -14.52}
     <QuesPointerPositionStaticDataList>k__BackingField:
     - _inspectorName: Lobart
       <Id>k__BackingField: 1
@@ -108,12 +177,12 @@ MonoBehaviour:
       <Position>k__BackingField: {x: -127.40256, y: 4.0287504, z: -122.84743}
     - _inspectorName: Franco_StoneTablet
       <Id>k__BackingField: 11
-      <Position>k__BackingField: {x: -100.37259, y: 5.9463797, z: -51.429504}
+      <Position>k__BackingField: {x: -100.37259, y: 5.552, z: -51.429504}
     - _inspectorName: Lobart_Turnip
       <Id>k__BackingField: 2
       <Position>k__BackingField: {x: -148.1, y: 2.58, z: 42.43}
     <SaveZoneList>k__BackingField:
-    - <Position>k__BackingField: {x: -230.17, y: 2.4, z: -132.04}
-      <Rotate>k__BackingField: {x: -0, y: 0.9567526, z: -0, w: 0.29090282}
     - <Position>k__BackingField: {x: -108.92, y: 1.74, z: -5.25}
       <Rotate>k__BackingField: {x: -0, y: 0.8864431, z: -0, w: 0.4628377}
+    - <Position>k__BackingField: {x: -230.17, y: 2.4, z: -132.04}
+      <Rotate>k__BackingField: {x: -0, y: 0.9567526, z: -0, w: 0.29090282}

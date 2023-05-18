@@ -25,8 +25,8 @@ MonoBehaviour:
     <IconConfig>k__BackingField:
       <Icon>k__BackingField: {fileID: 21300000, guid: 468e2d28aeae3844f88611ac898728bf,
         type: 3}
-      <MinZoomScale>k__BackingField: {x: 0.4, y: 0.4, z: 1}
-      <MaxZoomScale>k__BackingField: {x: 20, y: 20, z: 1}
+      <MinZoomScale>k__BackingField: {x: 2, y: 2, z: 1}
+      <MaxZoomScale>k__BackingField: {x: 50, y: 50, z: 1}
     <ShopConfigs>k__BackingField: []
   - _inspectorName: Lobart
     <NpcId>k__BackingField: 1
@@ -35,8 +35,8 @@ MonoBehaviour:
     <IconConfig>k__BackingField:
       <Icon>k__BackingField: {fileID: 21300000, guid: fa6f57b3e2c46c949ad00a98ceae6b39,
         type: 3}
-      <MinZoomScale>k__BackingField: {x: 0.3, y: 0.3, z: 1}
-      <MaxZoomScale>k__BackingField: {x: 10, y: 10, z: 1}
+      <MinZoomScale>k__BackingField: {x: 2, y: 2, z: 1}
+      <MaxZoomScale>k__BackingField: {x: 25, y: 25, z: 1}
     <ShopConfigs>k__BackingField:
     - _inspectorName: AidKit
       <IsAidKit>k__BackingField: 1
@@ -60,8 +60,8 @@ MonoBehaviour:
     <IconConfig>k__BackingField:
       <Icon>k__BackingField: {fileID: 21300000, guid: 626f8a0a4b763d847bce7fc4c36a483e,
         type: 3}
-      <MinZoomScale>k__BackingField: {x: 0.2, y: 0.2, z: 1}
-      <MaxZoomScale>k__BackingField: {x: 10, y: 10, z: 1}
+      <MinZoomScale>k__BackingField: {x: 2, y: 2, z: 1}
+      <MaxZoomScale>k__BackingField: {x: 25, y: 25, z: 1}
     <ShopConfigs>k__BackingField: []
   - _inspectorName: Thekla
     <NpcId>k__BackingField: 4
@@ -70,6 +70,6 @@ MonoBehaviour:
     <IconConfig>k__BackingField:
       <Icon>k__BackingField: {fileID: 21300000, guid: d3db3ee3124cbf84fb9b70ef71d301d2,
         type: 3}
-      <MinZoomScale>k__BackingField: {x: 0.5, y: 0.5, z: 1}
-      <MaxZoomScale>k__BackingField: {x: 20, y: 20, z: 1}
+      <MinZoomScale>k__BackingField: {x: 2, y: 2, z: 1}
+      <MaxZoomScale>k__BackingField: {x: 40, y: 40, z: 1}
     <ShopConfigs>k__BackingField: []

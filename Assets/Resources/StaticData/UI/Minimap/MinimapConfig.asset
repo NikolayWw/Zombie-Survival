@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <RenderTexture>k__BackingField: {fileID: 8400000, guid: 586d3e5c3fad03044ab5fe1c9f2b058c,
     type: 2}
-  <MinSizeZoom>k__BackingField: 1
-  <MaxSizeZoom>k__BackingField: 75
-  _startZoom: 0.1
+  <MinSizeZoom>k__BackingField: 10
+  <MaxSizeZoom>k__BackingField: 118
+  _startZoom: 0
