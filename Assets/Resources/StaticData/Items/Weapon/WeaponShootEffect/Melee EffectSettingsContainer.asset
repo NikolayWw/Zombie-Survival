@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a79a3716e9e1f4ebd7b594d96cac9c, type: 3}
+  m_Name: Melee EffectSettingsContainer
+  m_EditorClassIdentifier: 
+  <Settings>k__BackingField:
+  - _inspectorName: Living
+    <ApplyDamageSurfaceId>k__BackingField: 1
+    <ShotEffectId>k__BackingField: 102
+    <HoleEffectId>k__BackingField: 0
+  - _inspectorName: Wood
+    <ApplyDamageSurfaceId>k__BackingField: 2
+    <ShotEffectId>k__BackingField: 99
+    <HoleEffectId>k__BackingField: 0
+  - _inspectorName: Stone
+    <ApplyDamageSurfaceId>k__BackingField: 3
+    <ShotEffectId>k__BackingField: 101
+    <HoleEffectId>k__BackingField: 0
+  - _inspectorName: Metal
+    <ApplyDamageSurfaceId>k__BackingField: 4
+    <ShotEffectId>k__BackingField: 101
+    <HoleEffectId>k__BackingField: 0

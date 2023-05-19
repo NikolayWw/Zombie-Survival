@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a9bc9fd2e863b4ba037fcb31d1a569, type: 3}
+  m_Name: WindowConfigContainer
+  m_EditorClassIdentifier: 
+  <Configs>k__BackingField:
+  - _inspectorName: DropWeaponWindow
+    <WindowId>k__BackingField: 1
+    <Template>k__BackingField: {fileID: 9045312851438460415, guid: 72b28ce43451b9f459136af33f6fbe0d,
+      type: 3}
+  - _inspectorName: ShopWindow
+    <WindowId>k__BackingField: 2
+    <Template>k__BackingField: {fileID: 8934612984709105021, guid: a322333066684cd4d8fb2cc91bbfbbb0,
+      type: 3}
+  - _inspectorName: DialogWindow
+    <WindowId>k__BackingField: 3
+    <Template>k__BackingField: {fileID: 2244159344417824589, guid: 1fa71dc5810581f46a44b3237a73ab39,
+      type: 3}
+  - _inspectorName: GameMenuWindow
+    <WindowId>k__BackingField: 4
+    <Template>k__BackingField: {fileID: 3189054934715271919, guid: 725d3210aafd5cb468e09fbb85b63dd6,
+      type: 3}
+  - _inspectorName: MainMenuWindow
+    <WindowId>k__BackingField: 5
+    <Template>k__BackingField: {fileID: 8310321712442063062, guid: 46cbb304b05f28e4c9761526338aa3bc,
+      type: 3}
+  - _inspectorName: FirearmUpdateWeaponWindow
+    <WindowId>k__BackingField: 99
+    <Template>k__BackingField: {fileID: 2492900822096001166, guid: 072d1964dc8a332408af46c7f8a10eab,
+      type: 3}

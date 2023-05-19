@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b373d4c32d309904b9b704690bcd2f47, type: 3}
+  m_Name: QuestItemConfigContainer
+  m_EditorClassIdentifier: 
+  <ItemConfigs>k__BackingField:
+  - <Name>k__BackingField: Turnip
+    <QuestItemId>k__BackingField: 1
+    <IconSprite>k__BackingField: {fileID: 21300000, guid: 77effb0b3db1602459ef565104c2a265,
+      type: 3}
+    <PrefabPiece>k__BackingField: {fileID: 3297753516594069110, guid: 8e6329fee79b81c47815ffbc8af2b99c,
+      type: 3}
+    <CanStack>k__BackingField: 1
+  - <Name>k__BackingField: Stone Tablet
+    <QuestItemId>k__BackingField: 2
+    <IconSprite>k__BackingField: {fileID: 21300000, guid: 71c3c74138654e443a9e3d42d0204170,
+      type: 3}
+    <PrefabPiece>k__BackingField: {fileID: 5459301765937339253, guid: e3512e0ba32b0664c9af84393537e1b1,
+      type: 3}
+    <CanStack>k__BackingField: 0
+  - <Name>k__BackingField: Paket
+    <QuestItemId>k__BackingField: 3
+    <IconSprite>k__BackingField: {fileID: 21300000, guid: cafc6d979736f9c44a6980f4cf3a5904,
+      type: 3}
+    <PrefabPiece>k__BackingField: {fileID: 2745408977193331144, guid: a49011ce5488643438aab1dfd5cc4e39,
+      type: 3}
+    <CanStack>k__BackingField: 0
