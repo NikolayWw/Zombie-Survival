@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 260d19a7725b7c244bbb5b9261e041b6
 ModelImporter:
-  serializedVersion: 19301
+  serializedVersion: 21300
   internalIDToNameTable:
   - first:
       1: 100000
@@ -224,23 +224,10 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
-      does not match position in animation file:\n\t'UpperLeg_Left_jnt' : position
-      error = 4.142394 mm\n\t'LowerLeg_Left_jnt' : position error = 3.048867 mm\n\t'Foot_Left_jnt'
-      : position error = 2.721393 mm\n\t'Toe_Left_jnt' : position error = 1.310488
-      mm\n\t'UpperLeg_Right_jnt' : position error = 4.142417 mm\n\t'LowerLeg_Right_jnt'
-      : position error = 3.048798 mm\n\t'Foot_Right_jnt' : position error = 2.721344
-      mm\n\t'Toe_Right_jnt' : position error = 1.310440 mm\n\t'Spine_jnt' : position
-      error = 3.469231 mm\n\t'Spine_jnt 1' : position error = 3.846900 mm\n\t'Chest_jnt'
-      : position error = 2.963066 mm\n\t'Shoulder_Right_jnt' : position error = 2.776816
-      mm\n\t'Arm_Right_jnt' : position error = 2.750961 mm\n\t'Forearm_Right_jnt'
-      : position error = 2.667751 mm\n\t'Hand_Right_jnt' : position error = 3.092056
-      mm\n\t'Shoulder_Left_jnt' : position error = 3.323825 mm\n\t'Arm_Left_jnt'
-      : position error = 4.178982 mm\n\t'Forearm_Left_jnt' : position error = 3.665371
-      mm\n\t'Hand_Left_jnt' : position error = 4.730474 mm\n\t'Neck_jnt' : position
-      error = 3.213064 mm\n\t'Head_jnt' : position error = 2.563258 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -259,7 +246,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 0.01
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
@@ -267,21 +254,27 @@ ModelImporter:
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
   tangentSpace:
@@ -603,6 +596,8 @@ ModelImporter:
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
