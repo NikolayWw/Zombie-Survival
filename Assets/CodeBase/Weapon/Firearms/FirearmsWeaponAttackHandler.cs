@@ -52,11 +52,25 @@ namespace CodeBase.Weapon.Firearms
         protected override void OnFreeze()
         {
             _fireUpdate = Null;
+            _crosshair.Freeze();
         }
 
         protected override void OnUnfreeze()
         {
             ChangeWeaponShootType(_config.ShootType, _config.CrosshairConfig);
+            _crosshair.UnFreeze();
+        }
+
+        protected override void OnPause()
+        {
+            _fireUpdate = Null;
+            _crosshair.Freeze();
+        }
+
+        protected override void OnPlay()
+        {
+            ChangeWeaponShootType(_config.ShootType, _config.CrosshairConfig);
+            _crosshair.UnFreeze();
         }
 
         protected override void OnDestroyed()

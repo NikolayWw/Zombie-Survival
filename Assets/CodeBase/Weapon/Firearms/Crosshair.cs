@@ -24,6 +24,12 @@ namespace CodeBase.Weapon.Firearms
         public void UpdateSize(float size) =>
             _currentCrosshairSize = size + _config.MinSize;
 
+        public void Freeze() =>
+            CleanTexture();
+
+        public void UnFreeze() =>
+            InitTexture();
+
         private void DrawCrosshair()
         {
             DrawTexture(CenterSrceen.x - _currentCrosshairSize, CenterSrceen.y, _config.Lenght, _config.Width); //Left
@@ -45,6 +51,13 @@ namespace CodeBase.Weapon.Firearms
         {
             _texture = new Texture2D(1, 1);
             _texture.SetPixel(1, 1, new Color(_config.Color.r, _config.Color.g, _config.Color.b));
+            _texture.Apply();
+        }
+
+        private void CleanTexture()
+        {
+            _texture = new Texture2D(1, 1);
+            _texture.SetPixel(1, 1, Color.clear);
             _texture.Apply();
         }
     }

@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace CodeBase.Weapon
 {
-    public abstract class BaseWeaponAttackHandler : MonoBehaviour, IFreeze
+    public abstract class BaseWeaponAttackHandler : MonoBehaviour, IFreeze, IPause
     {
         [field: SerializeField] public WeaponHitEffect WeaponHitEffect { get; private set; }
         protected WeaponAttackTimer Timer { get; private set; }
@@ -40,22 +40,6 @@ namespace CodeBase.Weapon
         {
             Animator.OnEvent -= AnimationEventReader;
             OnDestroyed();
-        }
-
-        protected virtual void OnDestroyed()
-        { }
-
-        protected virtual void WeaponWereShow()
-        { }
-
-        protected virtual void OnAnimationEventReader(PlayerAnimationEventId id)
-        { }
-
-        private void AnimationEventReader(PlayerAnimationEventId id)
-        {
-            if (PlayerAnimationEventId.Weapon_WeaponWereShow == id)
-                WeaponWereShow();
-            OnAnimationEventReader(id);
         }
 
         #region Pause
@@ -95,5 +79,21 @@ namespace CodeBase.Weapon
         { }
 
         #endregion Pause
+
+        protected virtual void OnDestroyed()
+        { }
+
+        protected virtual void WeaponWereShow()
+        { }
+
+        protected virtual void OnAnimationEventReader(PlayerAnimationEventId id)
+        { }
+
+        private void AnimationEventReader(PlayerAnimationEventId id)
+        {
+            if (PlayerAnimationEventId.Weapon_WeaponWereShow == id)
+                WeaponWereShow();
+            OnAnimationEventReader(id);
+        }
     }
 }

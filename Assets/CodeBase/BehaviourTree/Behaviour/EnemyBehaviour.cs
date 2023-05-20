@@ -22,6 +22,7 @@ namespace CodeBase.BehaviourTree.Behaviour
 
         private EnemyPieceData _pieceData;
         private EnemyConfig _config;
+        private bool _dead;
 
         public void Construct(EnemyPieceData pieceData, IStaticDataService dataService)
         {
@@ -60,6 +61,9 @@ namespace CodeBase.BehaviourTree.Behaviour
 
         public void Play()
         {
+            if (_dead)
+                return;
+
             _agent.enabled = true;
             enabled = true;
         }
@@ -93,6 +97,7 @@ namespace CodeBase.BehaviourTree.Behaviour
             _collider.center += capsuleOffset;
 
             _agent.enabled = false;
+            _dead = true;
         }
 
         private void OnDrawGizmos()

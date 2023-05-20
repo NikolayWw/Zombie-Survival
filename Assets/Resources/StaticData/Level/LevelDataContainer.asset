@@ -165,16 +165,16 @@ MonoBehaviour:
     <QuesPointerPositionStaticDataList>k__BackingField:
     - _inspectorName: Lobart
       <Id>k__BackingField: 1
-      <Position>k__BackingField: {x: -93.66164, y: 3.675497, z: 3.24539}
+      <Position>k__BackingField: {x: -95.922, y: 2.601, z: 4.643}
     - _inspectorName: Sagitta
       <Id>k__BackingField: 30
-      <Position>k__BackingField: {x: -262.09772, y: 5.971573, z: -111.25508}
+      <Position>k__BackingField: {x: -262.317, y: 5.53, z: -111.523}
     - _inspectorName: Thekla
       <Id>k__BackingField: 20
-      <Position>k__BackingField: {x: -218.66621, y: 6.7937326, z: -182.48148}
+      <Position>k__BackingField: {x: -217.91512, y: 6.132, z: -181.4144}
     - _inspectorName: Franco
       <Id>k__BackingField: 10
-      <Position>k__BackingField: {x: -127.40256, y: 4.0287504, z: -122.84743}
+      <Position>k__BackingField: {x: -125.842, y: 3.405, z: -122.137}
     - _inspectorName: Franco_StoneTablet
       <Id>k__BackingField: 11
       <Position>k__BackingField: {x: -100.37259, y: 5.552, z: -51.429504}
