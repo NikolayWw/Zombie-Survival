@@ -12,7 +12,8 @@ using CodeBase.Services.SaveLoad;
 using CodeBase.Services.StaticData;
 using CodeBase.UI.Services.Factory;
 using CodeBase.UI.Services.Window;
-using UnityEngine;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 namespace CodeBase.Infrastructure.States
 {
@@ -43,6 +44,7 @@ namespace CodeBase.Infrastructure.States
 
         private void RegisterServices()
         {
+            InitializeAnalytics();
             _services.RegisterSingle<IGameStateMachine>(_stateMachine);
             RegisterStaticData();
             RegisterAds();
@@ -77,11 +79,15 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<IWindowService>(new WindowService(_services.Single<IUIFactory>()));
         }
 
-     
-
         private void OnLoaded()
         {
             _stateMachine.Enter<LoadMainMenuState>();
+        }
+
+        private async void InitializeAnalytics()
+        {
+            await UnityServices.InitializeAsync();
+            await AnalyticsService.Instance.CheckForRequiredConsents();
         }
 
         private void RegisterAds()

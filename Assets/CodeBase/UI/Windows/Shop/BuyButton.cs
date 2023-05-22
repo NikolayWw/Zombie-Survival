@@ -7,7 +7,9 @@ using CodeBase.StaticData.Items.WeaponItems;
 using CodeBase.StaticData.Items.WeaponItems.FirearmsWeapon;
 using CodeBase.StaticData.Items.WeaponItems.MeleeWeapon;
 using System;
+using System.Collections.Generic;
 using TMPro;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -95,6 +97,7 @@ namespace CodeBase.UI.Windows.Shop
                     _playerData.DecrementMoney(GetConfig().Price);
                     _slotsHandler.Add(NewWeaponData());
                     RefreshWeapon(_currentId);
+                    AnalyticsService.Instance.CustomData(AnalyticsConstants.BuyWeaponEvent, new Dictionary<string, object> { { AnalyticsConstants.WeaponNameParameter, _currentId.ToString() } });
                     break;
 
                 case BuyItemCategoryId.FirstAidKit:
