@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AidKitConfig
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Aid Kit
-  <Icon>k__BackingField: {fileID: 21300000, guid: d18dd4851069c5344a075ffe009b08f2,
+  <Icon>k__BackingField: {fileID: 206428065, guid: e8103546a9d54de4d8fe28a64aa94d44,
     type: 3}
   <Price>k__BackingField: 5
   <BuyAmount>k__BackingField: 1

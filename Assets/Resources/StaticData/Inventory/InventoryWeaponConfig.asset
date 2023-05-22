@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4651189e89a6d44aad308d25a1c611, type: 3}
   m_Name: InventoryWeaponConfig
   m_EditorClassIdentifier: 
-  <SlotSelectedSprite>k__BackingField: {fileID: 21300000, guid: cae23768bc2b5f941b60136b4555d8a2,
+  <SlotSelectedSprite>k__BackingField: {fileID: -681679569, guid: e8103546a9d54de4d8fe28a64aa94d44,
     type: 3}
   <SlotCount>k__BackingField: 4
   <DropDistance>k__BackingField: 1

@@ -29,7 +29,7 @@ namespace CodeBase.Services.StaticData
         private const string QuestItemConfigContainerPath = "StaticData/Items/QuestItems/QuestItemConfigContainer";
         private const string EnemyConfigContainerPath = "StaticData/NPC/Enemy/EnemyConfigsContainer";
         private const string LevelConfigsContainerPath = "StaticData/Level/LevelDataContainer";
-        private const string EmptySpritePath = "UI/Elements/EmptyIcon";
+        private const string EmptySpritePath = "UI/Atlas/EmptyIcon";
         private const string ShotEffectConfigsContainerPath = "StaticData/Items/Weapon/ShotEffectContainer";
         private const string AidKitConfigPath = "StaticData/Items/AidKitConfig";
         private const string DialogConfigsContainerPath = "StaticData/NPC/Npc/NpcDialogsContainer";
