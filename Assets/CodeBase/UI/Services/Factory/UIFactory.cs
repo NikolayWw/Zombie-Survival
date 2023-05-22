@@ -97,7 +97,7 @@ namespace CodeBase.UI.Services.Factory
             instantiate.GetComponentInChildren<CameraLookButton>()?.Construct(_inputService);
 
             QuestPointerWindow = instantiate.GetComponentInChildren<QuestPointerWindow>();
-            QuestPointerWindow.Construct(this, _staticDataService, _persistentProgressService);
+            QuestPointerWindow.Construct(this, _staticDataService, _persistentProgressService, _mainCamera);
         }
 
         public void CreateMinimap(Transform followTarget)

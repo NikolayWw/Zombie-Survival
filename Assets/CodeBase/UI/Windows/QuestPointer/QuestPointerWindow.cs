@@ -10,36 +10,33 @@ namespace CodeBase.UI.Windows.QuestPointer
     public class QuestPointerWindow : MonoBehaviour
     {
         private Camera _camera;
-
+        private Transform _cameraTransform;
         private IUIFactory _uiFactory;
 
-        private QuestPointerWorldTarget _activeWorldPointer;
+        private Transform _activeWorldPointer;
         private QuestUIPointerTarget _activeUIPointer;
         private QuestPointerPieceData _pieceData;
         private IStaticDataService _dataService;
 
-        public void Construct(IUIFactory uiFactory, IStaticDataService dataService, IPersistentProgressService persistentProgressService)
+        public void Construct(IUIFactory uiFactory, IStaticDataService dataService, IPersistentProgressService persistentProgressService, Camera mainCamera)
         {
             _uiFactory = uiFactory;
             _dataService = dataService;
             _pieceData = persistentProgressService.PlayerProgress.WorldData.QuestPointerPieceData;
-        }
-
-        private void Start()
-        {
-            _camera = Camera.main;
+            _camera = mainCamera;
+            _cameraTransform = mainCamera.transform;
         }
 
         public void InitWorldPointer(QuestPointerId id)
         {
-            _activeWorldPointer = _uiFactory.CreateWorldQuestPointerTarget();
+            _activeWorldPointer = _uiFactory.CreateWorldQuestPointerTarget().transform;
             _activeUIPointer = _uiFactory.CreateUIQuestPointerTarget(transform);
-            _activeWorldPointer.transform.position = GetPosition(id);
+            _activeWorldPointer.position = GetPosition(id);
         }
 
         public void MovePointer(QuestPointerId id)
         {
-            _activeWorldPointer.transform.position = GetPosition(id);
+            _activeWorldPointer.position = GetPosition(id);
             _pieceData.SetPosition(id);
         }
 
@@ -53,9 +50,9 @@ namespace CodeBase.UI.Windows.QuestPointer
             // Left, Right, Down, Up
             Plane[] planes = GeometryUtility.CalculateFrustumPlanes(_camera);
 
-            var cameraPoint = _camera.transform.position + _camera.transform.forward;
+            var cameraPoint = _cameraTransform.position + _cameraTransform.forward;
 
-            Vector3 toEnemy = _activeWorldPointer.transform.position - cameraPoint;
+            Vector3 toEnemy = _activeWorldPointer.position - cameraPoint;
             Ray ray = new Ray(cameraPoint, toEnemy);
 
             float rayMinDistance = Mathf.Infinity;
