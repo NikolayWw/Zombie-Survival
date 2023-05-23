@@ -12,8 +12,10 @@ namespace CodeBase.Logic
         {
             _windowService = windowService;
 
-            Cursor.lockState = CursorLockMode.Locked;
+            if (IsMobile())
+                return;
 
+            Cursor.lockState = CursorLockMode.Locked;
             _windowService.OnOpen += Unlock;
             _windowService.OnClose += Lock;
         }
@@ -44,5 +46,8 @@ namespace CodeBase.Logic
                     break;
                 }
         }
+
+        private bool IsMobile() =>
+          Application.isEditor == false;
     }
 }
