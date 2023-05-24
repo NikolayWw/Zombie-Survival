@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <LevelsStaticData>k__BackingField:
   - <SceneKey>k__BackingField: Main
-    <PlayerInitialPosition>k__BackingField: {x: -93.62451, y: 5.8512554, z: -16.01685}
+    <PlayerInitialPosition>k__BackingField: {x: -93.823875, y: 3.2825022, z: 1.1949558}
     <QuestPointerInitialId>k__BackingField: 1
     <WeaponsSpawnStaticData>k__BackingField:
     - _inscpectorName: Firearms_BanditGun

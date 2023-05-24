@@ -19,6 +19,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Sword
     <WeaponId>k__BackingField: 99
     <Price>k__BackingField: 100
+    <InAppPrice>k__BackingField: 1
     <Icon>k__BackingField: {fileID: 21300038, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
       type: 3}
     <PrefabInPiece>k__BackingField: {fileID: 123555904853452675, guid: 8ff07fac89646664abef894c8e11ea93,
@@ -38,6 +39,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Machete
     <WeaponId>k__BackingField: 100
     <Price>k__BackingField: 100
+    <InAppPrice>k__BackingField: 1.5
     <Icon>k__BackingField: {fileID: 21300038, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
       type: 3}
     <PrefabInPiece>k__BackingField: {fileID: 1476620362680645113, guid: 1bc21ff4a1a09ba478c1ba8d003bb1d7,
@@ -58,6 +60,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Pistol
     <WeaponId>k__BackingField: 999
     <Price>k__BackingField: 150
+    <InAppPrice>k__BackingField: 1.7
     <Icon>k__BackingField: {fileID: 21300004, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
       type: 3}
     <PrefabInPiece>k__BackingField: {fileID: 6201103840180661436, guid: 49ffa5de8d337784ea0ef54f463786d9,
@@ -89,6 +92,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Pistol Small
     <WeaponId>k__BackingField: 1001
     <Price>k__BackingField: 150
+    <InAppPrice>k__BackingField: 2.5
     <Icon>k__BackingField: {fileID: 21300010, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
       type: 3}
     <PrefabInPiece>k__BackingField: {fileID: 8241870679444214991, guid: 589b88b71dd56a343a4207b0a4f017cc,
@@ -120,6 +124,7 @@ MonoBehaviour:
   - <Name>k__BackingField: M16
     <WeaponId>k__BackingField: 1000
     <Price>k__BackingField: 250
+    <InAppPrice>k__BackingField: 2
     <Icon>k__BackingField: {fileID: 21300044, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
       type: 3}
     <PrefabInPiece>k__BackingField: {fileID: 7770727228568501025, guid: e9b2469f68e89d14e9515e58b9c58d1f,
@@ -151,6 +156,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Bandi Gun
     <WeaponId>k__BackingField: 1002
     <Price>k__BackingField: 250
+    <InAppPrice>k__BackingField: 3
     <Icon>k__BackingField: {fileID: 21300002, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6,
       type: 3}
     <PrefabInPiece>k__BackingField: {fileID: 646209045884207072, guid: 53df550ceee3dac43a947d6d5b6881fe,
@@ -183,6 +189,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Gravity Gun
     <WeaponId>k__BackingField: 1999
     <Price>k__BackingField: 100
+    <InAppPrice>k__BackingField: 3.5
     <Icon>k__BackingField: {fileID: 21300040, guid: 309ac3eb4cc441349b63128366ca98b6,
       type: 3}
     <PrefabInPiece>k__BackingField: {fileID: 2923169098554088047, guid: 5ff542a72b8b43949b9d63a36fdc5ef1,

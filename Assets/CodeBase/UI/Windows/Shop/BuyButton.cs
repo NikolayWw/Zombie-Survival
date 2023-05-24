@@ -17,6 +17,7 @@ namespace CodeBase.UI.Windows.Shop
 {
     public class BuyButton : MonoBehaviour
     {
+        [SerializeField] private ShopWindow _shopWindow;
         [SerializeField] private Button _buyButton;
         [SerializeField] private TMP_Text _buttonText;
 
@@ -39,14 +40,14 @@ namespace CodeBase.UI.Windows.Shop
             _dataService = dataService;
             _slotsHandler = logicFactory.WeaponSlotsHandler;
             _playerData = persistentProgressService.PlayerProgress.PlayerData;
-        }
 
-        private void Start()
-        {
             _buyButton.onClick.AddListener(Buy);
+            _shopWindow.OnWeaponRefresh += RefreshWeapon;
+            _shopWindow.OnAidKitRefresh += RefreshFirstAidKit;
+            ResetData();
         }
 
-        public void RefreshWeapon(WeaponId id)
+        private void RefreshWeapon(WeaponId id)
         {
             ResetData();
             _buyCategoryId = BuyItemCategoryId.Weapon;
@@ -74,7 +75,7 @@ namespace CodeBase.UI.Windows.Shop
             _buyButton.interactable = true;
         }
 
-        public void RefreshFirstAidKit()
+        private void RefreshFirstAidKit()
         {
             ResetData();
             _buyCategoryId = BuyItemCategoryId.FirstAidKit;
@@ -96,7 +97,7 @@ namespace CodeBase.UI.Windows.Shop
                 case BuyItemCategoryId.Weapon:
                     _playerData.DecrementMoney(GetConfig().Price);
                     _slotsHandler.Add(NewWeaponData());
-                    RefreshWeapon(_currentId);
+                    _shopWindow.SendWeaponPurchased(_currentId);
                     AnalyticsService.Instance.CustomData(AnalyticsConstants.BuyWeaponEvent, new Dictionary<string, object> { { AnalyticsConstants.WeaponNameParameter, _currentId.ToString() } });
                     break;
 
@@ -126,8 +127,7 @@ namespace CodeBase.UI.Windows.Shop
             switch (GetConfig())
             {
                 case FirearmsConfig data:
-                    return new WeaponDataContainer(new FirearmWeaponData(_currentId, 0, 55));
-                // return new WeaponDataContainer(new FirearmWeaponData(_currentId, 0, data.BuyAmount));
+                    return new WeaponDataContainer(new FirearmWeaponData(_currentId, 0, data.BuyAmount));
 
                 case MeleeWeaponConfig _:
                     return new WeaponDataContainer(new MeleeWeaponData(_currentId));

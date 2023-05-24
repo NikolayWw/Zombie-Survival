@@ -148,8 +148,9 @@ namespace CodeBase.UI.Services.Factory
             ShopWindow shopWindow = InstantiateRegister<ShopWindow>(WindowId.ShopWindow);
             shopWindow.Construct(this, _staticDataService, _persistentProgressService, _adsService);
             shopWindow.GetComponent<CloseWindowButton>()?.Construct(windowService);
-            shopWindow.GetComponent<BuyButton>()?.Construct(_staticDataService, _logicFactory, _persistentProgressService);
+            shopWindow.GetComponentInChildren<BuyButton>()?.Construct(_staticDataService, _logicFactory, _persistentProgressService);
             shopWindow.GetComponentInChildren<ShopItemDescription>()?.Construct(_staticDataService, _logicFactory, _persistentProgressService);
+            shopWindow.GetComponentInChildren<AppBuyButton>()?.Construct(_staticDataService, _logicFactory);
         }
 
         public UIShopSlot CreateShopSlot(Transform parent)

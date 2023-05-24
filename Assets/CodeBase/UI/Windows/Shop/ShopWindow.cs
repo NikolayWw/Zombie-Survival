@@ -4,6 +4,7 @@ using CodeBase.Services.StaticData;
 using CodeBase.StaticData.Items.WeaponItems;
 using CodeBase.StaticData.Shop;
 using CodeBase.UI.Services.Factory;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,13 +13,14 @@ namespace CodeBase.UI.Windows.Shop
 {
     public class ShopWindow : BaseWindow
     {
-        [SerializeField] private BuyButton _buyButton;
-        [SerializeField] private ShopItemDescription _itemDescription;
         [SerializeField] private RewardedAddMoney _addMoney;
 
         [SerializeField] private GridLayoutGroup _contentGridLayoutGroup;
         [SerializeField] private RectTransform _contentTransform;
         [SerializeField] private Transform _slotsRoot;
+
+        public Action<WeaponId> OnWeaponRefresh;
+        public Action OnAidKitRefresh;
 
         private IUIFactory _uiFactory;
         private IStaticDataService _dataService;
@@ -37,6 +39,11 @@ namespace CodeBase.UI.Windows.Shop
             InitSlots(shopConfigs);
             _addMoney.Initialize();
             ControlContentSize();
+        }
+
+        public void SendWeaponPurchased(WeaponId weaponId)
+        {
+            OnWeaponRefresh?.Invoke(weaponId);
         }
 
         protected override void OnClose()
@@ -60,14 +67,14 @@ namespace CodeBase.UI.Windows.Shop
         private void InitAidKitSlot()
         {
             UIShopSlot shopSlot = _uiFactory.CreateShopSlot(_slotsRoot);
-            shopSlot.Initialize(_dataService.AidKitConfig.Name, _dataService.AidKitConfig.Icon, RefreshAidKit);
+            shopSlot.Initialize(_dataService.AidKitConfig.Name, _dataService.AidKitConfig.Icon, OnAidKitRefresh);
         }
 
         private void InitWeaponSlot(ShopConfig config)
         {
             UIShopSlot slot = _uiFactory.CreateShopSlot(_slotsRoot);
             BaseWeaponConfig weaponConfig = _dataService.ForWeapon(config.WeaponId);
-            slot.Initialize(weaponConfig.Name, weaponConfig.Icon, () => RefreshWeapon(weaponConfig.WeaponId));
+            slot.Initialize(weaponConfig.Name, weaponConfig.Icon, () => OnWeaponRefresh?.Invoke(weaponConfig.WeaponId));
         }
 
         private void ControlContentSize()
@@ -77,18 +84,6 @@ namespace CodeBase.UI.Windows.Shop
             int cellCount = Mathf.CeilToInt(_slotsCount / numberOfColumns);
             float height = cellCount * (_contentGridLayoutGroup.cellSize.y + _contentGridLayoutGroup.spacing.y);
             _contentTransform.sizeDelta = new Vector2(_contentTransform.sizeDelta.x, height);
-        }
-
-        private void RefreshWeapon(WeaponId id)
-        {
-            _itemDescription.RefreshWeapon(id);
-            _buyButton.RefreshWeapon(id);
-        }
-
-        private void RefreshAidKit()
-        {
-            _itemDescription.RefreshAidKit();
-            _buyButton.RefreshFirstAidKit();
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using CodeBase.Services.Ads;
 using CodeBase.Services.PersistentProgress;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +8,8 @@ namespace CodeBase.UI.Windows.Shop
     public class RewardedAddMoney : MonoBehaviour
     {
         [SerializeField] private Button _showAdsButton;
-        [SerializeField] private GameObject[] _adActiveObjects = Array.Empty<GameObject>();
-        [SerializeField] private GameObject[] _adInActiveObjects = Array.Empty<GameObject>();
+        [SerializeField] private GameObject[] _adActiveObjects;
+        [SerializeField] private GameObject[] _adInActiveObjects;
 
         private IAdsService _adsService;
         private IPersistentProgressService _persistentProgressService;

@@ -8,6 +8,7 @@ namespace CodeBase.StaticData.Items.WeaponItems
         [field: SerializeField] public string Name { get; private set; } = string.Empty;
         [field: SerializeField] public WeaponId WeaponId { get; private set; }
         [field: SerializeField] public int Price { get; private set; }
+        [field: SerializeField] public double InAppPrice { get; private set; } = 1.0;
         [field: SerializeField] public Sprite Icon { get; private set; }
         [field: SerializeField] public GameObject PrefabInPiece { get; private set; }
         [field: SerializeField] public GameObject PrefabInHand { get; private set; }
@@ -20,6 +21,7 @@ namespace CodeBase.StaticData.Items.WeaponItems
         public void OnValidate()
         {
             if (Price < 0) Price = 0;
+            if (InAppPrice < 1) InAppPrice = 1;
             Validate();
         }
 

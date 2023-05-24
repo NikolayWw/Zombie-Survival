@@ -14,6 +14,7 @@ namespace CodeBase.UI.Windows.Shop
 {
     public class ShopItemDescription : MonoBehaviour
     {
+        [SerializeField] private ShopWindow _shopWindow;
         [SerializeField] private TMP_Text _nameText;
         [SerializeField] private TMP_Text _priceText;
         [SerializeField] private TMP_Text _ammoText;
@@ -44,7 +45,7 @@ namespace CodeBase.UI.Windows.Shop
             Subscribe(false);
         }
 
-        public void RefreshWeapon(WeaponId id)
+        private void RefreshWeapon(WeaponId id)
         {
             _currentId = id;
             if (WeaponId.None == id)
@@ -73,7 +74,7 @@ namespace CodeBase.UI.Windows.Shop
             }
         }
 
-        public void RefreshAidKit()
+        private void RefreshAidKit()
         {
             Show();
             CleanUI();
@@ -111,9 +112,17 @@ namespace CodeBase.UI.Windows.Shop
             foreach (var slot in _inventory.Slots)
             {
                 if (isSubscribe)
+                {
+                    _shopWindow.OnWeaponRefresh += RefreshWeapon;
+                    _shopWindow.OnAidKitRefresh += RefreshAidKit;
                     slot.OnSlotChangeValue += RefreshAmmo;
+                }
                 else
+                {
+                    _shopWindow.OnWeaponRefresh -= RefreshWeapon;
+                    _shopWindow.OnAidKitRefresh -= RefreshAidKit;
                     slot.OnSlotChangeValue -= RefreshAmmo;
+                }
             }
         }
 

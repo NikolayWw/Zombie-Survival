@@ -44,7 +44,7 @@ namespace CodeBase.Infrastructure.States
 
         private void RegisterServices()
         {
-            InitializeGamingServices();
+            InitializeGamingServicesAsync();
             _services.RegisterSingle<IGameStateMachine>(_stateMachine);
             RegisterStaticData();
             RegisterAds();
@@ -84,7 +84,7 @@ namespace CodeBase.Infrastructure.States
             _stateMachine.Enter<LoadMainMenuState>();
         }
 
-        private async void InitializeGamingServices()
+        private async void InitializeGamingServicesAsync()
         {
             await UnityServices.InitializeAsync();
             await AnalyticsService.Instance.CheckForRequiredConsents();
